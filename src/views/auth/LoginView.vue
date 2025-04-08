@@ -44,12 +44,12 @@ function onClick () {
 
       <v-text-field label="Password" variant="outlined" type="password" ></v-text-field>
 
-      <v-btn class="mt-2" rounded="xl" size="large" variant="outlined" block>Log in</v-btn>
+      <v-btn class="mt-2" rounded="xl" size="large" block color="green-darken-3">Log in</v-btn>
     </v-form>
      <hr class="my-5">
    
 
-   <h5>Don't have account? <router-link to="/login"> Click here to register</router-link></h5>
+   <h5>Don't have account? <RouterLink to="/register"> Click here to register</RouterLink></h5>
 
 
 
