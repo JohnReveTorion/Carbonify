@@ -13,7 +13,7 @@ const theme = ref('default')
 
       <v-main>
         <v-container>
-          <v-row class="align-center justify-center pt-5">
+          <v-row class="d-flex justify-center pt-5">
             <v-col cols="12" sm="8" md="6" lg="4">
               <v-card class="mx-auto" prepend-icon="mdi mdi-domain" subtitle="" width="400">
                 <template v-slot:title>
