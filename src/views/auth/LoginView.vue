@@ -12,7 +12,7 @@ const theme = ref('default')
       </v-app-bar>
 
       <v-main>
-        <v-containe fluid class="fill-height d-flex align-center justify-center">
+        <v-container>
           <v-row class="d-flex justify-center pt-5">
             <v-col cols="12" sm="8" md="6" lg="4">
               <v-card class="mx-auto" prepend-icon="mdi mdi-domain">
@@ -45,7 +45,7 @@ const theme = ref('default')
               </v-card>
             </v-col>
           </v-row>
-        </v-containe>
+        </v-container>
       </v-main>
 
       <v-footer class="align-center justify-center" color="green-darken-3" border app>
