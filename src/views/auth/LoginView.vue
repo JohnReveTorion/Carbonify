@@ -14,10 +14,11 @@ const theme = ref('default')
       <v-main>
         <v-container>
           <v-row class="d-flex justify-center pt-5">
+
             <v-col cols="6" md="6">
               <v-card class="mx-auto" prepend-icon="mdi mdi-domain">
-                <template v-slot:title>
-                  <span class="font-weight-black">Log In</span>
+                <template #title>
+                  <span class="font-weight-black">CARBONIFY</span>
                 </template>
 
                 <v-card-text class="bg-surface-light pt-5">
@@ -30,14 +31,15 @@ const theme = ref('default')
                       type="password"
                     ></v-text-field>
 
-                    <v-btn class="mt-2" rounded="xl" size="large" block color="green-darken-3"
-                      >Log in</v-btn
-                    >
+                    <v-btn class="mt-2" rounded="xl" size="large" block color="green-darken-3">
+                      Log in
+                    </v-btn>
                   </v-form>
+
                   <hr class="my-5" />
 
                   <h5>
-                    Don't have account?
+                    Don't have an account?
                     <RouterLink to="/register"> Click here to register</RouterLink>
                   </h5>
                 </v-card-text>
@@ -47,9 +49,9 @@ const theme = ref('default')
         </v-container>
       </v-main>
 
-      <v-footer class="align-center justify-center" color="green-darken-3" border app
-        >Carbonify 2024</v-footer
-      >
+      <v-footer class="align-center justify-center" color="green-darken-3" border app>
+        Carbonify 2024
+      </v-footer>
     </v-app>
   </v-responsive>
 </template>

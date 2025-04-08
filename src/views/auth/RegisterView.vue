@@ -22,10 +22,10 @@ const theme = ref('default')
 
                 <v-card-text class="bg-surface-light pt-4">
                   <v-form fast-fail @submit.prevent>
-                    <v-text-field v-model="firstName" label="Employee name"></v-text-field>
-                    <v-text-field v-model="lastName" label="Company name"></v-text-field>
-                    <v-text-field v-model="email" label="Email"></v-text-field>
-                    <v-text-field v-model="phonenumber" label="Phone Number"></v-text-field>
+                    <v-text-field label="Employee name"></v-text-field>
+                    <v-text-field label="Company name"></v-text-field>
+                    <v-text-field label="Email"></v-text-field>
+                    <v-text-field label="Phone Number"></v-text-field>
                     <v-btn class="mt-2" rounded="xl" size="small" block color="green-darken-3">Register</v-btn>
                   </v-form>
                 </v-card-text>
