@@ -14,10 +14,6 @@ const theme = ref('default')
       <v-main>
         <v-container>
           <v-row class="d-flex justify-center pt-5">
-            <v-col cols="6" class="text-center">
-              <img src="/public/carbonify-logo.png" alt="Logo" height="400" width="450" />
-            </v-col>
-
             <v-col cols="6" md="6">
               <v-card class="mx-auto" prepend-icon="mdi mdi-domain">
                 <template v-slot:title>
