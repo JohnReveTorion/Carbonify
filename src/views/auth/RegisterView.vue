@@ -12,10 +12,10 @@ const theme = ref('default')
       </v-app-bar>
 
       <v-main>
-        <v-container fluid class="fill-height d-flex align-center justify-center">
+        <v-container fluid class="fill-height align-center justify-center">
           <v-row class="d-flex justify-center pt-5">
             <v-col cols="12" sm="8" md="6" lg="4">
-              <v-card class="mx-auto" prepend-icon="mdi mdi-domain" subtitle="" width="400">
+              <v-card class="mx-auto" prepend-icon="mdi mdi-domain">
                 <template v-slot:title>
                   <span class="font-weight-black">CARBONIFY</span>
                 </template>
