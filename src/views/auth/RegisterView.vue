@@ -26,9 +26,7 @@ const theme = ref('default')
                     <v-text-field v-model="lastName" label="Company name"></v-text-field>
                     <v-text-field v-model="email" label="Email"></v-text-field>
                     <v-text-field v-model="phonenumber" label="Phone Number"></v-text-field>
-                    <v-btn class="mt-2" rounded="xl" size="small" block color="green-darken-3"
-                      ><RouterLink to="/login">Register</RouterLink></v-btn
-                    >
+                    <v-btn class="mt-2" rounded="xl" size="small" block color="green-darken-3">Register</v-btn>
                   </v-form>
                 </v-card-text>
               </v-card>
