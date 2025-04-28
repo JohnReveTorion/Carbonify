@@ -17,7 +17,7 @@ const theme = ref('default')
             <v-col cols="12" sm="8" md="6" lg="4">
               <v-card class="mx-auto" prepend-icon="mdi mdi-domain">
                 <template #title>
-                  <span class="font-weight-black">CARBONIFY 2026</span>
+                  <span class="font-weight-black">CARBONIFY</span>
                 </template>
 
                 <v-card-text class="bg-surface-light pt-5">
