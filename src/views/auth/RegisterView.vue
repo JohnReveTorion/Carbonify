@@ -13,7 +13,7 @@ const theme = ref('default')
 
       <v-main>
         <v-container fluid class="align-center justify-center">
-          <v-row class="d-flex justify-center pt-4">
+          <v-row class="d-flex justify-center">
             <v-col cols="12" sm="8" md="6" lg="4">
               <v-card class="mx-auto" prepend-icon="mdi mdi-domain">
                 <template v-slot:title>
@@ -35,7 +35,8 @@ const theme = ref('default')
         </v-container>
       </v-main>
 
-      <v-footer class="align-center justify-center" color="green-darken-3" border app>Carbonify 2024</v-footer
+      <v-footer class="align-center justify-center" color="green-darken-3" border app
+        >Carbonify 2024</v-footer
       >
     </v-app>
   </v-responsive>
