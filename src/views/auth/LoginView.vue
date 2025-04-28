@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-
+import carbonifyLogo from '@/assets/images/carbonify-logo.png' // Correct import
 const theme = ref('default')
 </script>
 
@@ -13,16 +13,26 @@ const theme = ref('default')
 
       <v-main>
         <v-container>
-          <v-row class="d-flex justify-center pt-5">
-            <v-col cols="12" sm="8" md="6" lg="4">
-              <v-card class="mx-auto" prepend-icon="mdi mdi-domain">
-                <template #title>
-                  <span class="font-weight-black">CARBONIFY</span>
-                </template>
-                <h2>janny</h2>
-                <h2>lowi</h2>
+          <v-row class="d-flex justify-center align-center pt-10">
+            <!-- Left: Logo -->
+            <v-col cols="12" md="4" class="d-flex justify-center mb-5 mb-md-0">
+              <img :src="carbonifyLogo" alt="Carbonify Logo" class="logo-image" />
 
-                <v-card-text class="bg-surface-light pt-5">
+            </v-col>
+
+            <!-- Right: Card Form -->
+            <br/>
+            <v-col cols="12" md="4" class="ml-md-5">
+              <br/>
+              <br/>
+              <v-card class="mx-auto">
+                <template #title>
+                  <div class="d-flex align-center justify-center">
+                    <span class="font-weight-black"></span>
+                  </div>
+                </template>
+
+                <v-card-text class="bg-surface-light pt-5 mx-4">
                   <v-form fast-fail @submit.prevent>
                     <v-text-field label="Company Name" variant="outlined"></v-text-field>
 
@@ -56,3 +66,20 @@ const theme = ref('default')
     </v-app>
   </v-responsive>
 </template>
+
+<style scoped>
+.logo-image {
+  height: 450px;
+  width: 450px;
+  margin-right: 250px;
+ 
+}
+
+@media (max-width: 600px) {
+  .logo-image {
+    height: 200px;
+    width: 250px;
+    margin-right: 0px;
+  }
+}
+</style>

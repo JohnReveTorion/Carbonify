@@ -7,26 +7,64 @@ const theme = ref('default')
 <template>
   <v-responsive class="border rounded">
     <v-app :theme="theme">
-      <v-app-bar class="px-3" color="green-darken-3">
-        <v-spacer></v-spacer>
+      <v-app-bar color="green-darken-3" flat>
+        <v-spacer />
       </v-app-bar>
 
       <v-main>
-        <v-container fluid class="align-center justify-center">
-          <v-row class="d-flex justify-center">
+        <v-container fluid class="d-flex align-center justify-center" style="min-height: 90vh;">
+          <v-row class="justify-center">
             <v-col cols="12" sm="8" md="6" lg="4">
-              <v-card class="mx-auto" prepend-icon="mdi mdi-domain">
-                <template v-slot:title>
-                  <span class="font-weight-black">CARBONIFY</span>
+              <v-card
+                class="pa-6 card-hover"
+                color="green-darken-3"
+                @mouseover="hover = true"
+                @mouseleave="hover = false"
+                :elevation="hover ? 12 : 4"
+              >
+                <!-- Card Title -->
+                <template #title>
+                  <div class="text-center text-h5 font-weight-bold white--text">REGISTER FORM</div>
                 </template>
 
-                <v-card-text class="bg-surface-light pt-4">
+                <!-- Form -->
+                <v-card-text class="pt-6">
                   <v-form fast-fail @submit.prevent>
-                    <v-text-field label="Employee name"></v-text-field>
-                    <v-text-field label="Company name"></v-text-field>
-                    <v-text-field label="Email"></v-text-field>
-                    <v-text-field label="Phone Number"></v-text-field>
-                    <v-btn class="mt-2" rounded="xl" size="small" block color="green-darken-3">Register</v-btn>
+                    <v-text-field 
+                      label="Employee Name" 
+                      variant="outlined" 
+                      class="mb-4" 
+                      prepend-icon="mdi-account"
+                    />
+                    <v-text-field 
+                      label="Company Name" 
+                      variant="outlined" 
+                      class="mb-4" 
+                      prepend-icon="mdi-office-building"
+                    />
+                    <v-text-field 
+                      label="Email" 
+                      variant="outlined" 
+                      class="mb-4" 
+                      prepend-icon="mdi-email"
+                    />
+                    <v-text-field 
+                      label="Phone Number" 
+                      variant="outlined" 
+                      class="mb-6" 
+                      prepend-icon="mdi-phone"
+                    />
+                    
+                    <v-btn 
+  rounded="xl"  
+  size="large" 
+  block 
+  color="white" 
+  text-color="green"
+>
+  Register
+</v-btn>
+
                   </v-form>
                 </v-card-text>
               </v-card>
@@ -35,9 +73,15 @@ const theme = ref('default')
         </v-container>
       </v-main>
 
-      <v-footer class="align-center justify-center" color="green-darken-3" border app
-        >Carbonify 2024</v-footer
-      >
+      <v-footer color="green-darken-3" class="text-center" app>
+        Carbonify 2024
+      </v-footer>
     </v-app>
   </v-responsive>
 </template>
+
+<style scoped>
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+</style>
