@@ -19,6 +19,7 @@ const theme = ref('default')
                 <template #title>
                   <span class="font-weight-black">CARBONIFY</span>
                 </template>
+                <h2>janny</h2>
 
                 <v-card-text class="bg-surface-light pt-5">
                   <v-form fast-fail @submit.prevent>
