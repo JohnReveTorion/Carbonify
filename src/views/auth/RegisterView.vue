@@ -2,96 +2,162 @@
 import { ref } from 'vue'
 
 const theme = ref('default')
+const hover = ref(false)
 </script>
 
 <template>
-  <v-responsive class="border rounded" style="height: 100vh;">
+  <v-responsive>
     <v-app :theme="theme">
-      <v-main>
-        <v-container
-          fluid
-          class="d-flex align-center justify-center"
-          style="height: 100vh;"
-        >
-          <v-row class="justify-center" no-gutters>
-            <v-col cols="12" sm="8" md="6" lg="4">
-              <v-card
-                class="pa-6 card-hover"
-                color="green-darken-3"
-                @mouseover="hover = true"
-                @mouseleave="hover = false"
-                :elevation="hover ? 12 : 4"
-                rounded="lg"
-              >
-                <!-- Card Title and Description -->
-                <v-card-title class="text-center">
-                  <h1 class="text-h5 font-weight-bold white--text mb-2">
-                    Welcome to Carbonify!
-                  </h1>
-                  <p class="text-body-2 white--text">
-                    Create your account below to get started.
-                  </p>
-                </v-card-title>
+      <!-- Transparent App Bar -->
+      <v-app-bar class="px-3" color="transparent" elevation="0">
+        <v-spacer></v-spacer>
+      </v-app-bar>
 
-                <!-- Form -->
-                <v-card-text class="pt-4">
-                  <v-form fast-fail @submit.prevent>
-                    <v-text-field 
-                      label="Employee Name" 
-                      variant="outlined" 
-                      class="mb-4" 
-                      prepend-icon="mdi-account"
-                      density="comfortable"
-                    />
-                    <v-text-field 
-                      label="Company Name" 
-                      variant="outlined" 
-                      class="mb-4" 
-                      prepend-icon="mdi-office-building"
-                      density="comfortable"
-                    />
-                    <v-text-field 
-                      label="Email" 
-                      variant="outlined" 
-                      class="mb-4" 
-                      prepend-icon="mdi-email"
-                      density="comfortable"
-                    />
-                    <v-text-field 
-                      label="Phone Number" 
-                      variant="outlined" 
-                      class="mb-6" 
-                      prepend-icon="mdi-phone"
-                      density="comfortable"
-                    />
-                    
-                    <v-btn 
-                      rounded="xl"  
-                      size="large" 
-                      block 
-                      color="white" 
-                      text-color="green-darken-3"
-                      type="submit"
-                    >
-                      Register
-                    </v-btn>
-                  </v-form>
-                </v-card-text>
-              </v-card>
+      <v-main class="background-image">
+        <v-container fluid class="py-12">
+          <v-row class="mb-12 px-5 py-5 my-5" align="center" justify="center">
+            <!-- Message Section -->
+            <v-col cols="12" sm="12" md="6" lg="6" class="text-center text-justify py-5 px-5 mr-5">
+              <p class="text-h5 white--text py-5 px-5 mr-5">
+                Every small step counts in the fight against climate change. By participating in carbon offset programs through Carbonify, you’re not just supporting your business—you’re contributing to a greener, more sustainable future for the Philippines. Let’s work together to protect our planet and create a better tomorrow, one carbon credit at a time.
+              </p>
+            </v-col>  
+
+            <!-- Form Section -->
+            <v-col cols="12" sm="12" md="6" lg="4">
+              <v-card
+  class="pa-8 card-hover px-2"
+  color="white"
+  :elevation="hover ? 12 : 4"
+  @mouseover="hover = true"
+  @mouseleave="hover = false"
+  rounded="xl"
+  max-width="500"
+>
+  <!-- Card Title and Description -->
+  <v-card-title class="justify-center text-center mb-2 ml-5">
+    <h1 class="text-h5 font-weight-bold text--primary">
+      Welcome to <span class="text-green-darken-3">Carbonify</span>
+    </h1>
+  </v-card-title>
+  <v-card-subtitle class="text-center mb-6">
+    <p class="text-body-2 text-grey-darken-1">
+      Join our mission to build a greener future. Register below to get started.
+    </p>
+  </v-card-subtitle>
+
+  <!-- Form -->
+  <v-card-text>
+    <v-form fast-fail @submit.prevent>
+      <v-text-field 
+        label="Employee Name" 
+        variant="outlined" 
+        class="mb-4" 
+        prepend-icon="mdi-account"
+        density="comfortable"
+        color="green-darken-3"
+      />
+      <v-text-field 
+        label="Company Name" 
+        variant="outlined" 
+        class="mb-4" 
+        prepend-icon="mdi-office-building"
+        density="comfortable"
+        color="green-darken-3"
+      />
+      <v-text-field 
+        label="Email" 
+        variant="outlined" 
+        class="mb-4" 
+        prepend-icon="mdi-email"
+        density="comfortable"
+        color="green-darken-3"
+      />
+      <v-text-field 
+        label="Phone Number" 
+        variant="outlined" 
+        class="mb-6" 
+        prepend-icon="mdi-phone"
+        density="comfortable"
+        color="green-darken-3"
+      />
+      
+      <v-btn 
+        rounded="xl"  
+        size="large" 
+        block 
+        color="green-darken-3" 
+        text-color="white"
+        type="submit"
+      >
+        Register
+      </v-btn>
+    </v-form>
+  </v-card-text>
+</v-card>
+
             </v-col>
           </v-row>
         </v-container>
       </v-main>
 
-      <v-footer color="green-darken-3" class="text-center" app>
-        <span class="white--text">&copy; Carbonify 2024</span>
+      <!-- Footer -->
+      <v-footer class="align-center justify-center py-4" color="green-darken-3" border app>
+        Carbonify 2024
       </v-footer>
     </v-app>
   </v-responsive>
 </template>
 
+<style scoped>
+.background-image {
+  background-image: url('@/assets/images/trees.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
 
+.white--text {
+  color: white !important;
+}
 
+.card-hover {
+  transition: all 0.3s ease;
+}
 
+.card-hover:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
+@media (max-width: 600px) {
+  .text-h5 {
+    font-size: 1.25rem;
+  }
+  .text-body-1 {
+    font-size: 0.875rem;
+  }
+  .card-hover {
+    padding: 1rem;
+  }
+  .background-image {
+    background-position: top;
+    min-height: 100vh;
+  }
+  
+}
 
+@media (max-width: 900px) {
+  .text-h5 {
+    font-size: 1.5rem;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+</style>

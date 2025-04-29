@@ -82,7 +82,7 @@ const theme = ref('default')
         </v-container>
       </v-main>
 
-      <v-footer class="align-center justify-center" color="green-darken-3" border app>
+      <v-footer class="align-center justify-center py-4" color="green-darken-3" border app>
         Carbonify 2024
       </v-footer>
     </v-app>
