@@ -25,36 +25,58 @@ const theme = ref('default')
             <v-col cols="12" md="4" class="ml-md-5">
               <br/>
               <br/>
-              <v-card class="mx-auto">
-                <template #title>
-                  <div class="d-flex align-center justify-center">
-                    <span class="font-weight-black"></span>
-                  </div>
-                </template>
+              
+              <v-card class="mx-auto my-12" max-width="400" elevation="10" rounded="lg">
+  <v-card-title class="text-center">
+    <h1 class="text-h5 font-weight-bold pt-3 pb-3" style="color: #2e7d32;">Welcome Back!</h1>
+    <p class="text-body-2 mt-2 text-grey-darken-1 mb-3">
+      Please sign in to continue to your account.
+    </p>
+  </v-card-title>
 
-                <v-card-text class="bg-surface-light pt-5 mx-4">
-                  <v-form fast-fail @submit.prevent>
-                    <v-text-field label="Company Name" variant="outlined"></v-text-field>
+  <v-card-text class="pt-0 px-6">
+    <v-form fast-fail @submit.prevent>
+      <v-text-field
+        label="Company Name"
+        variant="outlined"
+        density="comfortable"
+        class="mb-4"
+      ></v-text-field>
 
-                    <v-text-field
-                      label="Password"
-                      variant="outlined"
-                      type="password"
-                    ></v-text-field>
+      <v-text-field
+        label="Password"
+        variant="outlined"
+        type="password"
+        density="comfortable"
+        class="mb-6"
+      ></v-text-field>
 
-                    <v-btn class="mt-2" rounded="xl" size="large" block color="green-darken-3">
-                      Log in
-                    </v-btn>
-                  </v-form>
+      <v-btn
+        type="submit"
+        color="green-darken-3"
+        class="mb-6"
+        rounded="xl"
+        size="large"
+        block
+      >
+        Log In
+      </v-btn>
+    </v-form>
 
-                  <hr class="my-5" />
+    <v-divider class="my-6"></v-divider>
 
-                  <h5>
-                    Don't have an account?
-                    <RouterLink to="/register"> Click here to register</RouterLink>
-                  </h5>
-                </v-card-text>
-              </v-card>
+    <div class="text-center">
+      <span class="text-body-2">
+        Don't have an account?
+        <RouterLink to="/register" class="text-green-darken-3 font-weight-medium">
+          Click here to register
+        </RouterLink>
+      </span>
+    </div>
+  </v-card-text>
+</v-card>
+
+
             </v-col>
           </v-row>
         </v-container>
@@ -69,16 +91,17 @@ const theme = ref('default')
 
 <style scoped>
 .logo-image {
-  height: 450px;
-  width: 450px;
-  margin-right: 250px;
+  height: 500px;
+  width: 550px;
+  margin-top: 50px;
+  margin-right: 400px;
  
 }
 
 @media (max-width: 600px) {
   .logo-image {
-    height: 200px;
-    width: 250px;
+    height: 250px;
+    width: 280px;
     margin-right: 0px;
   }
 }
