@@ -20,7 +20,7 @@ const theme = ref('default')
                   <span class="font-weight-black">CARBONIFY</span>
                 </template>
 
-                <v-card-text class="bg-surface-light pt-4">
+                <v-card-text class="bg-surface-light pt-5">
                   <v-form fast-fail @submit.prevent>
                     <v-text-field label="Employee name"></v-text-field>
                     <v-text-field label="Company name"></v-text-field>
@@ -28,6 +28,10 @@ const theme = ref('default')
                     <v-text-field label="Phone Number"></v-text-field>
                     <v-btn class="mt-2" rounded="xl" size="small" block color="green-darken-3">Register</v-btn>
                   </v-form>
+
+                  <v-divider class="my-5"></v-divider>
+
+                  <h5>Already have an account?<RouterLink to="/"> Click here to Log in</RouterLink></h5>
                 </v-card-text>
               </v-card>
             </v-col>

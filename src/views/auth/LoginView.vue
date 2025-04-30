@@ -19,17 +19,21 @@ const theme = ref('default')
                 <template #title>
                   <span class="font-weight-black">CARBONIFY</span>
                 </template>
-                <h2>janny</h2>
-                <h2>lowi</h2>
 
                 <v-card-text class="bg-surface-light pt-5">
                   <v-form fast-fail @submit.prevent>
                     <v-text-field label="Company Name" variant="outlined"></v-text-field>
 
                     <v-text-field
-                      label="Password"
-                      variant="outlined"
-                      type="password"
+                      v-model="password"
+                      :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                      :rules="[rules.required, rules.min]"
+                      :type="show1 ? 'text' : 'password'"
+                      hint="At least 8 characters"
+                      label="Normal with hint text"
+                      name="input-10-1"
+                      counter
+                      @click:append="show1 = !show1"
                     ></v-text-field>
 
                     <v-btn class="mt-2" rounded="xl" size="large" block color="green-darken-3">
@@ -37,11 +41,12 @@ const theme = ref('default')
                     </v-btn>
                   </v-form>
 
-                  <hr class="my-5" />
+                  <v-divider class="my-5"></v-divider>
 
                   <h5>
-                    Don't have an account?
-                    <RouterLink to="/register"> Click here to register</RouterLink>
+                    Don't have an account?<RouterLink to="/register">
+                      Click here to Register</RouterLink
+                    >
                   </h5>
                 </v-card-text>
               </v-card>
