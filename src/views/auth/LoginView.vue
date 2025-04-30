@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-
+import carbonifyLogo from '@/assets/images/carbonify-logo.png' // Correct import
 const theme = ref('default')
 </script>
 
@@ -25,28 +25,28 @@ const theme = ref('default')
                     <v-text-field label="Company Name" variant="outlined"></v-text-field>
 
                     <v-text-field
-                      v-model="password"
-                      :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-                      :rules="[rules.required, rules.min]"
-                      :type="show1 ? 'text' : 'password'"
-                      hint="At least 8 characters"
-                      label="Normal with hint text"
-                      name="input-10-1"
-                      counter
-                      @click:append="show1 = !show1"
+                      label="Password"
+                      variant="outlined"
+                      type="password"
                     ></v-text-field>
 
-                    <v-btn class="mt-2" rounded="xl" size="large" block color="green-darken-3">
-                      Log in
-                    </v-btn>
-                  </v-form>
+      <v-btn
+        type="submit"
+        color="green-darken-3"
+        class="mb-6"
+        rounded="xl"
+        size="large"
+        block
+      >
+        Log In
+      </v-btn>
+    </v-form>
 
-                  <v-divider class="my-5"></v-divider>
+                  <hr class="my-5" />
 
                   <h5>
-                    Don't have an account?<RouterLink to="/register">
-                      Click here to Register</RouterLink
-                    >
+                    Don't have an account?
+                    <RouterLink to="/register"> Click here to register</RouterLink>
                   </h5>
                 </v-card-text>
               </v-card>
@@ -55,9 +55,27 @@ const theme = ref('default')
         </v-container>
       </v-main>
 
-      <v-footer class="align-center justify-center" color="green-darken-3" border app>
+      <v-footer class="align-center justify-center py-4" color="green-darken-3" border app>
         Carbonify 2024
       </v-footer>
     </v-app>
   </v-responsive>
 </template>
+
+<style scoped>
+.logo-image {
+  height: 500px;
+  width: 550px;
+  margin-top: 50px;
+  margin-right: 400px;
+ 
+}
+
+@media (max-width: 600px) {
+  .logo-image {
+    height: 250px;
+    width: 280px;
+    margin-right: 0px;
+  }
+}
+</style>
