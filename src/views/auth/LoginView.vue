@@ -65,7 +65,7 @@ const theme = ref('default')
                   <div class="text-center">
                     <span class="text-body-2">
                       Don't have an account?
-                      <RouterLink to="/register" class="text-green-darken-3 font-weight-medium">
+                      <RouterLink to="/home" class="text-green-darken-3 font-weight-medium">
                         Click here to register
                       </RouterLink>
                     </span>
