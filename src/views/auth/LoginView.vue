@@ -48,16 +48,24 @@ const theme = ref('default')
                       class="mb-6"
                     ></v-text-field>
 
-                    <v-btn
-                      type="submit"
-                      color="green-darken-3"
-                      class="mb-6"
-                      rounded="xl"
-                      size="large"
-                      block
-                    >
-                      Log In
-                    </v-btn>
+                 <RouterLink to="home">
+  <v-btn
+    type="submit"
+    color="green darken-3"
+    class="mb-6"
+    rounded="lg"
+    size="large"
+    block
+    elevation="2"
+    style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;"
+    @mouseover="hover = true"
+    @mouseleave="hover = false"
+  >
+    Log In
+  </v-btn>
+</RouterLink>
+
+                    
                   </v-form>
 
                   <v-divider class="my-6"></v-divider>
@@ -65,7 +73,7 @@ const theme = ref('default')
                   <div class="text-center">
                     <span class="text-body-2">
                       Don't have an account?
-                      <RouterLink to="/home" class="text-green-darken-3 font-weight-medium">
+                      <RouterLink to="/register" class="text-green-darken-3 font-weight-medium">
                         Click here to register
                       </RouterLink>
                     </span>
