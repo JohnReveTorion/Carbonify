@@ -8,7 +8,7 @@ const theme = ref('default')
   <v-responsive class="border rounded">
     <v-app :theme="theme">
       <!-- Transparent App Bar -->
-      <v-app-bar class="px-3" color="green-darken-3">
+      <v-app-bar class="px-3" color="#047736">
         <v-spacer></v-spacer>
       </v-app-bar>
 
@@ -25,7 +25,7 @@ const theme = ref('default')
             <v-col cols="12" md="5" class="d-flex justify-center mb-5 mb-md-0" style="margin-left: 15px;">
               <v-card class="mx-auto my-12" max-width="400" elevation="10" rounded="lg">
                 <v-card-title class="text-center">
-                  <h1 class="text-h5 font-weight-bold pt-3 pb-3" style="color: #2e7d32;">Welcome Back!</h1>
+                  <h1 class="text-h5 font-weight-bold pt-3 pb-3" style="color: #047736;">Welcome Back! 🌿</h1>
                   <p class="text-body-2 mt-2 text-grey-darken-1 mb-3">
                     Please sign in to continue to your account.
                   </p>
@@ -51,7 +51,7 @@ const theme = ref('default')
                  <RouterLink to="home" style="text-decoration: none;">
   <v-btn
     type="submit"
-    color="green darken-3"
+    color="#047736"
     class="mb-6"
     rounded="lg"
     size="large"
@@ -75,7 +75,7 @@ const theme = ref('default')
                     <span class="text-body-2">
                       Don't have an account?
                       <RouterLink to="/register" class="text-green-darken-3 font-weight-medium">
-                        Click here to register
+                        <b>Click here to register</b>
                       </RouterLink>
                     </span>
                   </div>
@@ -87,7 +87,7 @@ const theme = ref('default')
       </v-main>
 
       <!-- Footer -->
-      <v-footer class="align-center justify-center py-4" color="green-darken-3" border app>
+      <v-footer class="align-center justify-center py-4" color="#047736" border app>
         Carbonify 2024
       </v-footer>
     </v-app>
