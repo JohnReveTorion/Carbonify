@@ -88,7 +88,7 @@ const theme = ref('default')
 
       <!-- Footer -->
       <v-footer class="align-center justify-center py-4" color="#047736" border app>
-        Carbonify 2024
+        © 2025 Carbonify. All rights reserved.
       </v-footer>
     </v-app>
   </v-responsive>

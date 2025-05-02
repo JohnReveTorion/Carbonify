@@ -109,7 +109,7 @@ const hover = ref(false)
     rounded="xl"  
     size="large" 
     block 
-    color="green-darken-3" 
+    color="#047736" 
     text-color="white"
     type="submit"
   >
@@ -126,8 +126,8 @@ const hover = ref(false)
       </v-main>
 
       <!-- Footer -->
-      <v-footer class="align-center justify-center py-4" color="black" border app>
-        Carbonify 2024
+      <v-footer class="align-center justify-center py-4" color="#047736" border app>
+        © 2025 Carbonify. All rights reserved.
       </v-footer>
     </v-app>
   </v-responsive>
