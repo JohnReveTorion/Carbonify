@@ -54,7 +54,7 @@ const hover = ref(false)
                     <v-text-field 
                       label="Employee Name" 
                       variant="outlined" 
-                      class="mb-4" 
+                      class="mb-2" 
                       prepend-icon="mdi-account"
                       density="comfortable"
                       color="green-darken-3"
@@ -62,15 +62,35 @@ const hover = ref(false)
                     <v-text-field 
                       label="Company Name" 
                       variant="outlined" 
-                      class="mb-4" 
+                      class="mb-2" 
                       prepend-icon="mdi-office-building"
                       density="comfortable"
                       color="green-darken-3"
                     />
+                    <v-text-field
+  v-model="password"
+  label="Password"
+  variant="outlined"
+  prepend-icon="mdi-lock"
+  type="password"
+  density="comfortable"
+  class="mb-2"
+/>
+
+<v-text-field
+  v-model="confirmPassword"
+  label="Confirm Password"
+  variant="outlined"
+  prepend-icon="mdi-lock-check"
+  type="password"
+  density="comfortable"
+  class="mb-2"
+/>
+
                     <v-text-field 
                       label="Email" 
                       variant="outlined" 
-                      class="mb-4" 
+                      class="mb-2" 
                       prepend-icon="mdi-email"
                       density="comfortable"
                       color="green-darken-3"
@@ -78,22 +98,25 @@ const hover = ref(false)
                     <v-text-field 
                       label="Phone Number" 
                       variant="outlined" 
-                      class="mb-6" 
+                      class="mb-2" 
                       prepend-icon="mdi-phone"
                       density="comfortable"
                       color="green-darken-3"
                     />
                     
-                    <v-btn 
-                      rounded="xl"  
-                      size="large" 
-                      block 
-                      color="green-darken-3" 
-                      text-color="white"
-                      type="submit"
-                    >
-                      Register
-                    </v-btn>
+                  <RouterLink to="/" style="text-decoration: none">
+  <v-btn 
+    rounded="xl"  
+    size="large" 
+    block 
+    color="green-darken-3" 
+    text-color="white"
+    type="submit"
+  >
+    Register
+  </v-btn>
+</RouterLink>
+
                   </v-form>
                 </v-card-text>
               </v-card>
@@ -159,5 +182,10 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-y: auto; /* Ensure scrolling is enabled */
+}
+
+.a {
+  text-decoration: none;
+
 }
 </style>

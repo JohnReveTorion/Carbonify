@@ -48,7 +48,7 @@ const theme = ref('default')
                       class="mb-6"
                     ></v-text-field>
 
-                 <RouterLink to="home">
+                 <RouterLink to="home" style="text-decoration: none;">
   <v-btn
     type="submit"
     color="green darken-3"
@@ -57,13 +57,14 @@ const theme = ref('default')
     size="large"
     block
     elevation="2"
-    style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;"
+    style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;"
     @mouseover="hover = true"
     @mouseleave="hover = false"
   >
     Log In
   </v-btn>
 </RouterLink>
+
 
                     
                   </v-form>
