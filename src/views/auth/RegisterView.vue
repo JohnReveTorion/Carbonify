@@ -46,64 +46,63 @@ const hover = ref(false)
     </p>
   </v-card-subtitle>
 
-  <!-- Form -->
-  <v-card-text>
-    <v-form fast-fail @submit.prevent>
-      <v-text-field 
-        label="Employee Name" 
-        variant="outlined" 
-        class="mb-4" 
-        prepend-icon="mdi-account"
-        density="comfortable"
-        color="green-darken-3"
-      />
-      <v-text-field 
-        label="Company Name" 
-        variant="outlined" 
-        class="mb-4" 
-        prepend-icon="mdi-office-building"
-        density="comfortable"
-        color="green-darken-3"
-      />
-      <v-text-field 
-        label="Email" 
-        variant="outlined" 
-        class="mb-4" 
-        prepend-icon="mdi-email"
-        density="comfortable"
-        color="green-darken-3"
-      />
-      <v-text-field 
-        label="Phone Number" 
-        variant="outlined" 
-        class="mb-6" 
-        prepend-icon="mdi-phone"
-        density="comfortable"
-        color="green-darken-3"
-      />
-      
-      <v-btn 
-        rounded="xl"  
-        size="large" 
-        block 
-        color="green-darken-3" 
-        text-color="white"
-        type="submit"
-      >
-        Register
-      </v-btn>
-    </v-form>
-  </v-card-text>
-</v-card>
-
+                <!-- Form -->
+                <v-card-text>
+                  <v-form fast-fail @submit.prevent>
+                    <v-text-field 
+                      label="Employee Name" 
+                      variant="outlined" 
+                      class="mb-4" 
+                      prepend-icon="mdi-account"
+                      density="comfortable"
+                      color="green-darken-3"
+                    />
+                    <v-text-field 
+                      label="Company Name" 
+                      variant="outlined" 
+                      class="mb-4" 
+                      prepend-icon="mdi-office-building"
+                      density="comfortable"
+                      color="green-darken-3"
+                    />
+                    <v-text-field 
+                      label="Email" 
+                      variant="outlined" 
+                      class="mb-4" 
+                      prepend-icon="mdi-email"
+                      density="comfortable"
+                      color="green-darken-3"
+                    />
+                    <v-text-field 
+                      label="Phone Number" 
+                      variant="outlined" 
+                      class="mb-6" 
+                      prepend-icon="mdi-phone"
+                      density="comfortable"
+                      color="green-darken-3"
+                    />
+                    
+                    <v-btn 
+                      rounded="xl"  
+                      size="large" 
+                      block 
+                      color="green-darken-3" 
+                      text-color="white"
+                      type="submit"
+                    >
+                      Register
+                    </v-btn>
+                  </v-form>
+                </v-card-text>
+              </v-card>
             </v-col>
           </v-row>
         </v-container>
       </v-main>
 
       <!-- Footer -->
-      <v-footer class="align-center justify-center py-4" color="black" border app>
-        Carbonify 2024
+      <v-footer class="align-center justify-center py-4" color="#047736" border app>
+        © 2025 Carbonify. All rights reserved.
       </v-footer>
     </v-app>
   </v-responsive>
@@ -158,5 +157,10 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-y: auto; /* Ensure scrolling is enabled */
+}
+
+.a {
+  text-decoration: none;
+
 }
 </style>
