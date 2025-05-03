@@ -46,11 +46,12 @@ const hover = ref(false)
 
         <!-- Pricing Information -->
         <div class="d-flex justify-end mb-2">
-          <h3 class="text-end" style="color: #E67E22;">PHP 280 per credit</h3>
+          <h3 class="text-end mx-2" style="color: #3A4A4A"> Price range: </h3>
+          <h3 class="text-end" style="color: #E67E22;"> PHP 445 to 1,660 per carbon credit</h3>
         </div>
 
         <div class="d-flex justify-end">
-          <h4 class="text-end" style="color: #2C3E50;">₱750,000 for 1,500 tons per year</h4>
+          <h4 class="text-end" style="color: #2C3E50;">sold 143,000,000 carbon credit per year</h4>
         </div>
 
         <!-- Information Rows -->
@@ -62,7 +63,7 @@ const hover = ref(false)
 
 <!-- Second Info Row (Nature and Forest) -->
 <div class="info-row mt-3" style="display: flex;  center; padding: 8px; border: 1px solid #BDC3C7; border-radius: 10px; background-color: #ECF0F1;">
-  
+  <v-icon class="mr-2" style="color:#4A90E2;">mdi-weather-rainy</v-icon>
   <span class="info-text" style="font-weight: 600; font-size: 16px; color: #2C3E50;"> 🔋 Energy</span>
 </div>
 
@@ -76,7 +77,7 @@ const hover = ref(false)
         </div>
         
       </v-col>
-      <a href="https://example.com/nature-based-solutions" target="_blank" style="align-self: center; color: #3498DB; text-decoration: none; font-weight: 500;">
+      <a href="https://www.maharlikacarbon.com/" target="_blank" style="align-self: center; color: #3498DB; text-decoration: none; font-weight: 500;">
             🌐 Learn more about Maharlika Carbon
           </a>
     </v-row>
@@ -104,22 +105,24 @@ const hover = ref(false)
 
         <!-- Pricing Information -->
         <div class="d-flex justify-end mb-2">
-          <h3 class="text-end" style="color: #E67E22;">PHP 280 per credit</h3>
+          <h3 class="text-end mx-2" style="color: #3A4A4A"> Price range: </h3>
+          <h3 class="text-end" style="color: #E67E22;"> PHP 445 to 1,660 per carbon credit</h3>
         </div>
         
         <div class="d-flex justify-end">
-          <h4 class="text-end" style="color: #2C3E50;">₱750,000 for 1,500 tons per year</h4>
+          <h4 class="text-end" style="color: #2C3E50;">sold 300,000 carbon credit per year</h4>
         </div>
 
         <!-- Information Rows -->
         <div class="info-row mt-3" style="display: flex; padding: 8px; border: 1px solid #BDC3C7; border-radius: 8px; background-color: #ECF0F1;">
   <v-icon class="mr-3" style="color:#2980B9; font-size: 24px;">mdi-map-marker</v-icon>
+  
   <span class="info-text" style="font-weight: 600; font-size: 16px; color: #2C3E50;">Philippines</span>
 </div>
 
 <!-- Second Info Row (Nature and Forest) -->
 <div class="info-row mt-3" style="display: flex;  center; padding: 8px; border: 1px solid #BDC3C7; border-radius: 10px; background-color: #ECF0F1;">
-  
+  <v-icon class="mr-2" style="color:#4A90E2;">mdi-weather-rainy</v-icon>
   <span class="info-text" style="font-weight: 600; font-size: 16px; color: #2C3E50;"> 🌱 Nature and Forest</span>
 </div>
 
@@ -130,6 +133,9 @@ const hover = ref(false)
           </v-btn>
         </div>
       </v-col>
+      <a href="https://lionheartfarms.com.ph/" target="_blank" style="align-self: center; color: #3498DB; text-decoration: none; font-weight: 500;">
+            🌐 Learn more about Lionheart Farms
+          </a>
     </v-row>
   </v-card-text>
 </v-card>
@@ -139,40 +145,40 @@ const hover = ref(false)
     <v-row align="start" class="d-flex">
       <!-- Image Column -->
       <v-col cols="12" sm="4" class="image-column">
-        <img src="@/assets/images/maharlika.png" alt="Nature-Based Solution" class="image-style rounded-lg shadow-lg"/>
+        <img src="@/assets/images/GreenCarbon.png" alt="Nature-Based Solution" class="image-style rounded-lg shadow-lg"/>
       </v-col>
       
       <!-- Text and Information Column -->
       <v-col cols="12" sm="8">
         <!-- Title -->
-        <h6 class="text-h6 font-weight-bold text-title mb-2" style="color: #2C3E50;">Nature-Based Solution</h6>
+        <h6 class="text-h6 font-weight-bold text-title mb-2" style="color: #2C3E50;">🌿 Green Carbon Inc.</h6>
         
         <!-- Description -->
         <p class="text-body-2 text-description text-justify mb-3" style="color: #34495E;">
-          Nature-Based Solutions (NBS) refer to actions that work with nature to address environmental challenges, such as climate change,
-          water security, and biodiversity loss. These solutions aim to restore, manage, or protect ecosystems to enhance their capacity to
-          provide essential services.
+          Green Carbon Inc. is a Tokyo-based company specializing in carbon credit projects. In the Philippines, it partners with farmers and local groups to reduce methane emissions from rice farming, reforest areas like Mt. Pinatubo, and conserve mangroves in Quezon. It also supports biochar initiatives, helping the country meet its carbon reduction goals.
         </p>
 
         <!-- Pricing Information -->
         <div class="d-flex justify-end mb-2">
-          <h3 class="text-end" style="color: #E67E22;">PHP 280 per credit</h3>
+          <h3 class="text-end mx-2" style="color: #3A4A4A"> Price range: </h3>
+          <h3 class="text-end" style="color: #E67E22;"> PHP 277 to 1,665 per carbon credit</h3>
         </div>
         
         <div class="d-flex justify-end">
-          <h4 class="text-end" style="color: #2C3E50;">₱750,000 for 1,500 tons per year</h4>
+          <h4 class="text-end" style="color: #2C3E50;">sold 40,000 carbon credit per year</h4>
         </div>
 
         <!-- Information Rows -->
-        <div class="info-row mt-3">
-          <v-icon class="mr-2" style="color:#4A90E2;">mdi-map-marker</v-icon>
-          <span class="info-text" style="font-weight: 500; color: #7F8C8D;">Philippines</span>
-        </div>
-        
-        <div class="info-row mt-2">
-          <v-icon class="mr-2" style="color:#4A90E2;">mdi-weather-rainy</v-icon>
-          <span class="info-text" style="font-weight: 500; color: #7F8C8D;">Nature and Forest</span>
-        </div>
+          <div class="info-row mt-3" style="display: flex; padding: 8px; border: 1px solid #BDC3C7; border-radius: 8px; background-color: #ECF0F1;">
+  <v-icon class="mr-3" style="color:#2980B9; font-size: 24px;">mdi-map-marker</v-icon>
+  <span class="info-text" style="font-weight: 600; font-size: 16px; color: #2C3E50;">Philippines</span>
+</div>
+
+<!-- Second Info Row (Nature and Forest) -->
+<div class="info-row mt-3" style="display: flex;  center; padding: 8px; border: 1px solid #BDC3C7; border-radius: 10px; background-color: #ECF0F1;">
+  <v-icon class="mr-2" style="color:#4A90E2;">mdi-weather-rainy</v-icon>
+  <span class="info-text" style="font-weight: 600; font-size: 16px; color: #2C3E50;"> 🌱 Nature and Forest</span>
+</div>
 
         <!-- Buy Button -->
         <div class="d-flex justify-end mt-4">
@@ -180,7 +186,11 @@ const hover = ref(false)
             Buy Now
           </v-btn>
         </div>
+        
       </v-col>
+      <a href="https://green-carbon.co.jp/en/tag/philippine/" target="_blank" style="align-self: center; color: #3498DB; text-decoration: none; font-weight: 500;">
+            🌐 Learn more about Green Carbon Inc.
+          </a>
     </v-row>
   </v-card-text>
 </v-card>
@@ -190,40 +200,40 @@ const hover = ref(false)
     <v-row align="start" class="d-flex">
       <!-- Image Column -->
       <v-col cols="12" sm="4" class="image-column">
-        <img src="@/assets/images/NBS.jpg" alt="Nature-Based Solution" class="image-style rounded-lg shadow-lg"/>
+        <img src="@/assets/images/acen.png" alt="Nature-Based Solution" class="image-style rounded-lg shadow-lg"/>
       </v-col>
       
       <!-- Text and Information Column -->
       <v-col cols="12" sm="8">
         <!-- Title -->
-        <h6 class="text-h6 font-weight-bold text-title mb-2" style="color: #2C3E50;">Nature-Based Solution</h6>
+        <h6 class="text-h6 font-weight-bold text-title mb-2" style="color: #2C3E50;"> 🌿 ACEN, GenZero, and Keppel</h6>
         
         <!-- Description -->
         <p class="text-body-2 text-description text-justify mb-3" style="color: #34495E;">
-          Nature-Based Solutions (NBS) refer to actions that work with nature to address environmental challenges, such as climate change,
-          water security, and biodiversity loss. These solutions aim to restore, manage, or protect ecosystems to enhance their capacity to
-          provide essential services.
+          ACEN, GenZero, and Keppel are collaborating to accelerate the early retirement of coal plants in Southeast Asia, starting with the SLTEC coal plant in the Philippines. They aim to replace it with renewable energy and storage, using Transition Credits to finance the shift. This initiative supports the region's move away from coal and toward cleaner energy.
         </p>
 
         <!-- Pricing Information -->
         <div class="d-flex justify-end mb-2">
-          <h3 class="text-end" style="color: #E67E22;">PHP 280 per credit</h3>
+          <h3 class="text-end mx-2" style="color: #3A4A4A"> Price: </h3>
+          <h3 class="text-end" style="color: #E67E22;"> PHP 1,665 per carbon credit</h3>
         </div>
         
         <div class="d-flex justify-end">
-          <h4 class="text-end" style="color: #2C3E50;">₱750,000 for 1,500 tons per year</h4>
+          <h4 class="text-end" style="color: #2C3E50;">sold 4,350,000 carbon credit per year</h4>
         </div>
 
         <!-- Information Rows -->
-        <div class="info-row mt-3">
-          <v-icon class="mr-2" style="color:#4A90E2;">mdi-map-marker</v-icon>
-          <span class="info-text" style="font-weight: 500; color: #7F8C8D;">Philippines</span>
-        </div>
-        
-        <div class="info-row mt-2">
-          <v-icon class="mr-2" style="color:#4A90E2;">mdi-weather-rainy</v-icon>
-          <span class="info-text" style="font-weight: 500; color: #7F8C8D;">Nature and Forest</span>
-        </div>
+          <div class="info-row mt-3" style="display: flex; padding: 8px; border: 1px solid #BDC3C7; border-radius: 8px; background-color: #ECF0F1;">
+  <v-icon class="mr-3" style="color:#2980B9; font-size: 24px;">mdi-map-marker</v-icon>
+  <span class="info-text" style="font-weight: 600; font-size: 16px; color: #2C3E50;">Philippines</span>
+</div>
+
+<!-- Second Info Row (Nature and Forest) -->
+<div class="info-row mt-3" style="display: flex;  center; padding: 8px; border: 1px solid #BDC3C7; border-radius: 10px; background-color: #ECF0F1;">
+  <v-icon class="mr-2" style="color:#4A90E2;">mdi-weather-rainy</v-icon>
+  <span class="info-text" style="font-weight: 600; font-size: 16px; color: #2C3E50;"> 🔋 Energy</span>
+</div>
 
         <!-- Buy Button -->
         <div class="d-flex justify-end mt-4">
@@ -231,7 +241,11 @@ const hover = ref(false)
             Buy Now
           </v-btn>
         </div>
+        
       </v-col>
+      <a href="https://www.keppel.com/media/acen-genzero-and-keppel-join-hands-to-catalyse-retirement-of-coal-fired-plants-in-southeast-asia/" target="_blank" style="align-self: center; color: #3498DB; text-decoration: none; font-weight: 500;">
+            🌐 Learn more about ACEN, GenZero, and Keppel
+          </a>
     </v-row>
   </v-card-text>
 </v-card>
@@ -241,40 +255,39 @@ const hover = ref(false)
     <v-row align="start" class="d-flex">
       <!-- Image Column -->
       <v-col cols="12" sm="4" class="image-column">
-        <img src="@/assets/images/NBS.jpg" alt="Nature-Based Solution" class="image-style rounded-lg shadow-lg"/>
+        <img src="@/assets/images/creattura.png" alt="Nature-Based Solution" class="image-style rounded-lg shadow-lg"/>
       </v-col>
       
       <!-- Text and Information Column -->
       <v-col cols="12" sm="8">
         <!-- Title -->
-        <h6 class="text-h6 font-weight-bold text-title mb-2" style="color: #2C3E50;">Nature-Based Solution</h6>
+        <h6 class="text-h6 font-weight-bold text-title mb-2" style="color: #2C3E50;"> 🌿 Creattura</h6>
         
         <!-- Description -->
         <p class="text-body-2 text-description text-justify mb-3" style="color: #34495E;">
-          Nature-Based Solutions (NBS) refer to actions that work with nature to address environmental challenges, such as climate change,
-          water security, and biodiversity loss. These solutions aim to restore, manage, or protect ecosystems to enhance their capacity to
-          provide essential services.
+          Creattura is a Japan-based climate tech company developing carbon credit projects in the Philippines by reducing methane emissions from rice farming. Using satellite monitoring and smart irrigation (AWD), it helps generate high-quality carbon credits through its digital platform, Lynx.
         </p>
 
-        <!-- Pricing Information -->
-        <div class="d-flex justify-end mb-2">
-          <h3 class="text-end" style="color: #E67E22;">PHP 280 per credit</h3>
+       <div class="d-flex justify-end mb-2">
+          <h3 class="text-end mx-2" style="color: #3A4A4A"> Price: </h3>
+          <h3 class="text-end" style="color: #E67E22;"> PHP 1,665 carbon credit</h3>
         </div>
         
         <div class="d-flex justify-end">
-          <h4 class="text-end" style="color: #2C3E50;">₱750,000 for 1,500 tons per year</h4>
+          <h4 class="text-end" style="color: #2C3E50;">sold 400000 carbon credit per year</h4>
         </div>
 
         <!-- Information Rows -->
-        <div class="info-row mt-3">
-          <v-icon class="mr-2" style="color:#4A90E2;">mdi-map-marker</v-icon>
-          <span class="info-text" style="font-weight: 500; color: #7F8C8D;">Philippines</span>
-        </div>
-        
-        <div class="info-row mt-2">
-          <v-icon class="mr-2" style="color:#4A90E2;">mdi-weather-rainy</v-icon>
-          <span class="info-text" style="font-weight: 500; color: #7F8C8D;">Nature and Forest</span>
-        </div>
+          <div class="info-row mt-3" style="display: flex; padding: 8px; border: 1px solid #BDC3C7; border-radius: 8px; background-color: #ECF0F1;">
+  <v-icon class="mr-3" style="color:#2980B9; font-size: 24px;">mdi-map-marker</v-icon>
+  <span class="info-text" style="font-weight: 600; font-size: 16px; color: #2C3E50;">Philippines</span>
+</div>
+
+<!-- Second Info Row (Nature and Forest) -->
+<div class="info-row mt-3" style="display: flex;  center; padding: 8px; border: 1px solid #BDC3C7; border-radius: 10px; background-color: #ECF0F1;">
+  <v-icon class="mr-2" style="color:#4A90E2;">mdi-weather-rainy</v-icon>
+  <span class="info-text" style="font-weight: 600; font-size: 16px; color: #2C3E50;">  🌱 Nature and Forest</span>
+</div>
 
         <!-- Buy Button -->
         <div class="d-flex justify-end mt-4">
@@ -282,7 +295,11 @@ const hover = ref(false)
             Buy Now
           </v-btn>
         </div>
+        
       </v-col>
+      <a href="https://carbonherald.com/creattura-on-a-new-mission-carbon-credits-from-rice-fields-in-philippines/" target="_blank" style="align-self: center; color: #3498DB; text-decoration: none; font-weight: 500;">
+            🌐 Learn more about Creattura
+          </a>
     </v-row>
   </v-card-text>
 </v-card>
