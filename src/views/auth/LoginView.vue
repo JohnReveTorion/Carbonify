@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import loginform from '@/components/auth/loginform.vue'
 import carbonifyLogo from '@/assets/images/carbonify-logo.png' // Correct import
 const theme = ref('default')
 </script>
@@ -8,11 +9,11 @@ const theme = ref('default')
   <v-responsive class="border rounded">
     <v-app :theme="theme">
       <!-- Transparent App Bar -->
-      
+
 
       <!-- Main Content with Background Image -->
       <v-main class="background-image">
-        <v-container>
+        <v-container fluid>
           <v-row class="d-flex justify-center align-center pt-10">
             <!-- Left: Logo -->
             <v-col cols="12" md="4" class="d-flex justify-center mb-5 mb-md-0">
@@ -30,41 +31,15 @@ const theme = ref('default')
                   </p>
                 </v-card-title>
 
-                <v-card-text class="pt-0 px-6">
-                  <v-form fast-fail @submit.prevent>
-                    <v-text-field
-                      label="Company Name"
-                      variant="outlined"
-                      density="comfortable"
-                      class="mb-4"
-                    ></v-text-field>
-
-                    <v-text-field
-                      label="Password"
-                      variant="outlined"
-                      type="password"
-                      density="comfortable"
-                      class="mb-6"
-                    ></v-text-field>
-
-                    <v-btn
-                      type="submit"
-                      color="green-darken-3"
-                      class="mb-6"
-                      rounded="xl"
-                      size="large"
-                      block
-                    >
-                      Log In
-                    </v-btn>
-                  </v-form>
+    <v-card-text class="pt-0 px-6">
+      <loginform></loginform>
 
                   <v-divider class="my-6"></v-divider>
 
                   <div class="text-center">
                     <span class="text-body-2">
                       Don't have an account?
-                      <RouterLink to="/home" class="text-green-darken-3 font-weight-medium">
+                      <RouterLink to="/register" class="text-green-darken-3 font-weight-medium">
                         Click here to register
                       </RouterLink>
                     </span>
@@ -77,7 +52,7 @@ const theme = ref('default')
       </v-main>
 
       <!-- Footer -->
-      
+
     </v-app>
   </v-responsive>
 </template>
@@ -116,7 +91,7 @@ const theme = ref('default')
 
 .v-card {
   width: 100%; /* Ensures card width is responsive */
-  
+
 }
 
 .v-footer {
