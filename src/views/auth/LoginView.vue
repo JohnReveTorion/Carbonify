@@ -8,7 +8,7 @@ const theme = ref('default')
   <v-responsive class="border rounded">
     <v-app :theme="theme">
       <!-- Transparent App Bar -->
-      
+
 
       <!-- Main Content with Background Image -->
       <v-main class="background-image">
@@ -37,13 +37,14 @@ const theme = ref('default')
 
     <v-card-text class="pt-0 px-6">
       <v-form fast-fail @submit.prevent>
-  <v-text-field
-  label="Company Name" 
-   variant="outlined" 
-   class="mb-6" 
- density="comfortable"
- color="white"
- style="
+        <v-text-field
+  label="Company Name"
+  variant="outlined"
+  class="mb-6"
+  density="comfortable"
+  color="white"
+  style="
+    color: white;
     --v-field-label-color: white;
     --v-field-border-color: white;
     --v-input-control-color: white;
@@ -60,6 +61,7 @@ const theme = ref('default')
   class="mb-6"
   color="white"
   style="
+    color: white;
     --v-field-label-color: white;
     --v-field-border-color: white;
     --v-input-control-color: white;
@@ -107,7 +109,7 @@ const theme = ref('default')
       </v-main>
 
       <!-- Footer -->
-      
+
     </v-app>
   </v-responsive>
 </template>
@@ -146,7 +148,7 @@ const theme = ref('default')
 
 .v-card {
   width: 100%; /* Ensures card width is responsive */
-  
+
 }
 
 .v-footer {
