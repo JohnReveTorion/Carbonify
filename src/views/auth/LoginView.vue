@@ -8,9 +8,7 @@ const theme = ref('default')
   <v-responsive class="border rounded">
     <v-app :theme="theme">
       <!-- Transparent App Bar -->
-      <v-app-bar class="px-3" color="#047736">
-        <v-spacer></v-spacer>
-      </v-app-bar>
+      
 
       <!-- Main Content with Background Image -->
       <v-main class="background-image">
@@ -22,82 +20,102 @@ const theme = ref('default')
             </v-col>
 
             <!-- Right: Card Form -->
-            <v-col cols="12" md="5" class="d-flex justify-center mb-5 mb-md-0" style="margin-left: 15px;">
-              <v-card class="mx-auto my-12" max-width="400" elevation="10" rounded="lg">
-                <v-card-title class="text-center">
-                  <h1 class="text-h5 font-weight-bold pt-3 pb-3" style="color: #047736;">Welcome Back! 🌿</h1>
-                  <p class="text-body-2 mt-2 text-grey-darken-1 mb-3">
-                    Please sign in to continue to your account.
-                  </p>
-                </v-card-title>
-
-                <v-card-text class="pt-0 px-6">
-                  <v-form fast-fail @submit.prevent>
-                    <v-text-field
-                      label="Company Name"
-                      variant="outlined"
-                      density="comfortable"
-                      class="mb-4"
-                    ></v-text-field>
-
-                    <v-text-field
-                      label="Password"
-                      variant="outlined"
-                      type="password"
-                      density="comfortable"
-                      class="mb-6"
-                    ></v-text-field>
-
-                 <RouterLink to="home" style="text-decoration: none;">
-  <v-btn
-    type="submit"
-    color="#047736"
-    class="mb-6"
+            <v-col cols="12" md="5" class="d-flex justify-center mb-5 mb-md-0">
+  <v-card
+    class="mx-auto my-12"
+    max-width="400"
+    elevation="0"
     rounded="lg"
-    size="large"
-    block
-    elevation="2"
-    style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;"
-    @mouseover="hover = true"
-    @mouseleave="hover = false"
+    style="background-color: transparent;"
   >
-    Log In
-  </v-btn>
+    <v-card-title class="text-center">
+      <h1 class="text-h5 font-weight-bold pt-3 pb-3" style="color: white;">Welcome Back! 🌿</h1>
+      <p class="text-body-2 mt-2 text-white mb-3">
+        Please sign in to continue to your account.
+      </p>
+    </v-card-title>
+
+    <v-card-text class="pt-0 px-6">
+      <v-form fast-fail @submit.prevent>
+  <v-text-field
+  label="Company Name"
+  variant="outlined"
+  density="comfortable"
+  class="mb-4"
+  color="white"
+  style="
+    --v-field-label-color: white;
+    --v-field-border-color: white;
+    --v-input-control-color: white;
+    --v-field-text-color: white;
+    --v-field-background-color: transparent;
+  "
+/>
+
+<v-text-field
+  label="Password"
+  variant="outlined"
+  type="password"
+  density="comfortable"
+  class="mb-6"
+  color="white"
+  style="
+    --v-field-label-color: white;
+    --v-field-border-color: white;
+    --v-input-control-color: white;
+    --v-field-text-color: white;
+    --v-field-background-color: transparent;
+  "
+/>
+  <RouterLink to="home" style="text-decoration: none;">
+    <v-btn
+      type="submit"
+      color="#f0f0f0"
+      class="mb-6"
+      rounded="lg"
+      size="large"
+      block
+      elevation="2"
+      style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;"
+    >
+      Log In
+    </v-btn>
+  </RouterLink>
+</v-form>
+
+      <v-divider class="my-6"></v-divider>
+
+      <div class="text-center">
+        <span class="text-body-2 text-white">
+          Don't have an account?
+          <RouterLink
+  to="/register"
+  class="font-weight-medium"
+  style="color: #f0f0f0;"
+>
+  <b>Click here to register</b>
 </RouterLink>
 
+        </span>
+      </div>
+    </v-card-text>
+  </v-card>
+</v-col>
 
-                    
-                  </v-form>
-
-                  <v-divider class="my-6"></v-divider>
-
-                  <div class="text-center">
-                    <span class="text-body-2">
-                      Don't have an account?
-                      <RouterLink to="/register" class="text-green-darken-3 font-weight-medium">
-                        <b>Click here to register</b>
-                      </RouterLink>
-                    </span>
-                  </div>
-                </v-card-text>
-              </v-card>
-            </v-col>
           </v-row>
         </v-container>
       </v-main>
 
       <!-- Footer -->
-      <v-footer class="align-center justify-center py-4" color="#047736" border app>
-        © 2025 Carbonify. All rights reserved.
-      </v-footer>
+      
     </v-app>
   </v-responsive>
 </template>
 
 <style scoped>
 .logo-image {
-  height: 500px;
-  width: 550px;
+  height: 400px;
+  width: 450px;
 }
 
 @media (max-width: 600px) {
@@ -108,7 +126,7 @@ const theme = ref('default')
 }
 
 .background-image {
-  background-image: url('@/assets/images/your-background-image.jpg'); /* Replace with your correct image path */
+  background-image: url('@/assets/images/login-bg.png'); /* Replace with your correct image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -128,6 +146,7 @@ const theme = ref('default')
 
 .v-card {
   width: 100%; /* Ensures card width is responsive */
+  
 }
 
 .v-footer {
@@ -141,5 +160,9 @@ const theme = ref('default')
     max-width: 100%;
     margin: 0;
   }
+}
+
+.soft-white {
+  color: #f0f0f0;
 }
 </style>
