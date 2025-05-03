@@ -16,7 +16,7 @@ const hover = ref(false)
         <ul class="navbar-links">
           <li><router-link to="/">Market Trend</router-link></li>
           <li><router-link to="/services">Transaction History</router-link></li>
-          <li><router-link to="/about">About</router-link></li>
+          <li><RouterLink to="about"> about</RouterLink></li>
           
         </ul>
       </div>
@@ -83,7 +83,8 @@ const hover = ref(false)
     </v-row>
   </v-card-text>
 </v-card>
-
+ 
+ 
 
  <v-card class="card-container elevation-5 rounded-lg">
   <v-card-text class="card-title p-4">
