@@ -38,12 +38,12 @@ const theme = ref('default')
     <v-card-text class="pt-0 px-6">
       <v-form fast-fail @submit.prevent>
   <v-text-field
-  label="Company Name"
-  variant="outlined"
-  density="comfortable"
-  class="mb-4"
-  color="white"
-  style="
+  label="Company Name" 
+   variant="outlined" 
+   class="mb-6" 
+ density="comfortable"
+ color="white"
+ style="
     --v-field-label-color: white;
     --v-field-border-color: white;
     --v-input-control-color: white;
