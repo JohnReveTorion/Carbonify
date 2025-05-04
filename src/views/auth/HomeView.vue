@@ -1,8 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const theme = ref('default')
-const hover = ref(false)
+
 </script>
 
 <template>
@@ -17,7 +16,7 @@ const hover = ref(false)
           <li><router-link to="/">Market Trend</router-link></li>
           <li><router-link to="/services">Transaction History</router-link></li>
           <li><RouterLink to="about"> about</RouterLink></li>
-          
+
         </ul>
       </div>
     </nav>
@@ -62,7 +61,7 @@ const hover = ref(false)
 </div>
 
 <!-- Second Info Row (Nature and Forest) -->
-<div class="info-row mt-3" style="display: flex;  center; padding: 8px; border: 1px solid #BDC3C7; border-radius: 10px; background-color: #ECF0F1;">
+<div class="info-row mt-3" style="display: flex;  padding: 8px; border: 1px solid #BDC3C7; border-radius: 10px; background-color: #ECF0F1;">
   <v-icon class="mr-2" style="color:#4A90E2;">mdi-weather-rainy</v-icon>
   <span class="info-text" style="font-weight: 600; font-size: 16px; color: #2C3E50;"> 🔋 Energy</span>
 </div>
@@ -73,9 +72,9 @@ const hover = ref(false)
           <v-btn color="primary" class="rounded-lg" @click="handleBuy" style="font-weight: 600;">
             Buy Now
           </v-btn>
-          
+
         </div>
-        
+
       </v-col>
       <a href="https://www.maharlikacarbon.com/" target="_blank" style="align-self: center; color: #3498DB; text-decoration: none; font-weight: 500;">
             🌐 Learn more about Maharlika Carbon
@@ -83,8 +82,8 @@ const hover = ref(false)
     </v-row>
   </v-card-text>
 </v-card>
- 
- 
+
+
 
  <v-card class="card-container elevation-5 rounded-lg">
   <v-card-text class="card-title p-4">
@@ -93,12 +92,12 @@ const hover = ref(false)
       <v-col cols="12" sm="4" class="image-column">
         <img src="@/assets/images/lionheart.png" alt="Nature-Based Solution" class="image-style rounded-lg shadow-lg"/>
       </v-col>
-      
+
       <!-- Text and Information Column -->
       <v-col cols="12" sm="8">
         <!-- Title -->
         <h6 class="text-h6 font-weight-bold text-title mb-2" style="color: #2C3E50;"> 🌿 Lionheart Farms</h6>
-        
+
         <!-- Description -->
         <p class="text-body-2 text-description text-justify mb-3" style="color: #34495E;">
           Lionheart Farms is a sustainable coconut farm in Palawan, Philippines, focusing on organic products and eco-friendly practices like carbon sequestration. It also offers carbon credits, helping combat climate change while supporting local communities.
@@ -109,7 +108,7 @@ const hover = ref(false)
           <h3 class="text-end mx-2" style="color: #3A4A4A"> Price range: </h3>
           <h3 class="text-end" style="color: #E67E22;"> PHP 445 to 1,660 per carbon credit</h3>
         </div>
-        
+
         <div class="d-flex justify-end">
           <h4 class="text-end" style="color: #2C3E50;">sold 300,000 carbon credit per year</h4>
         </div>
@@ -117,7 +116,7 @@ const hover = ref(false)
         <!-- Information Rows -->
         <div class="info-row mt-3" style="display: flex; padding: 8px; border: 1px solid #BDC3C7; border-radius: 8px; background-color: #ECF0F1;">
   <v-icon class="mr-3" style="color:#2980B9; font-size: 24px;">mdi-map-marker</v-icon>
-  
+
   <span class="info-text" style="font-weight: 600; font-size: 16px; color: #2C3E50;">Philippines</span>
 </div>
 
@@ -148,12 +147,12 @@ const hover = ref(false)
       <v-col cols="12" sm="4" class="image-column">
         <img src="@/assets/images/GreenCarbon.png" alt="Nature-Based Solution" class="image-style rounded-lg shadow-lg"/>
       </v-col>
-      
+
       <!-- Text and Information Column -->
       <v-col cols="12" sm="8">
         <!-- Title -->
         <h6 class="text-h6 font-weight-bold text-title mb-2" style="color: #2C3E50;">🌿 Green Carbon Inc.</h6>
-        
+
         <!-- Description -->
         <p class="text-body-2 text-description text-justify mb-3" style="color: #34495E;">
           Green Carbon Inc. is a Tokyo-based company specializing in carbon credit projects. In the Philippines, it partners with farmers and local groups to reduce methane emissions from rice farming, reforest areas like Mt. Pinatubo, and conserve mangroves in Quezon. It also supports biochar initiatives, helping the country meet its carbon reduction goals.
@@ -164,7 +163,7 @@ const hover = ref(false)
           <h3 class="text-end mx-2" style="color: #3A4A4A"> Price range: </h3>
           <h3 class="text-end" style="color: #E67E22;"> PHP 277 to 1,665 per carbon credit</h3>
         </div>
-        
+
         <div class="d-flex justify-end">
           <h4 class="text-end" style="color: #2C3E50;">sold 40,000 carbon credit per year</h4>
         </div>
@@ -187,7 +186,7 @@ const hover = ref(false)
             Buy Now
           </v-btn>
         </div>
-        
+
       </v-col>
       <a href="https://green-carbon.co.jp/en/tag/philippine/" target="_blank" style="align-self: center; color: #3498DB; text-decoration: none; font-weight: 500;">
             🌐 Learn more about Green Carbon Inc.
@@ -203,12 +202,12 @@ const hover = ref(false)
       <v-col cols="12" sm="4" class="image-column">
         <img src="@/assets/images/acen.png" alt="Nature-Based Solution" class="image-style rounded-lg shadow-lg"/>
       </v-col>
-      
+
       <!-- Text and Information Column -->
       <v-col cols="12" sm="8">
         <!-- Title -->
         <h6 class="text-h6 font-weight-bold text-title mb-2" style="color: #2C3E50;"> 🌿 ACEN, GenZero, and Keppel</h6>
-        
+
         <!-- Description -->
         <p class="text-body-2 text-description text-justify mb-3" style="color: #34495E;">
           ACEN, GenZero, and Keppel are collaborating to accelerate the early retirement of coal plants in Southeast Asia, starting with the SLTEC coal plant in the Philippines. They aim to replace it with renewable energy and storage, using Transition Credits to finance the shift. This initiative supports the region's move away from coal and toward cleaner energy.
@@ -219,7 +218,7 @@ const hover = ref(false)
           <h3 class="text-end mx-2" style="color: #3A4A4A"> Price: </h3>
           <h3 class="text-end" style="color: #E67E22;"> PHP 1,665 per carbon credit</h3>
         </div>
-        
+
         <div class="d-flex justify-end">
           <h4 class="text-end" style="color: #2C3E50;">sold 4,350,000 carbon credit per year</h4>
         </div>
@@ -242,7 +241,7 @@ const hover = ref(false)
             Buy Now
           </v-btn>
         </div>
-        
+
       </v-col>
       <a href="https://www.keppel.com/media/acen-genzero-and-keppel-join-hands-to-catalyse-retirement-of-coal-fired-plants-in-southeast-asia/" target="_blank" style="align-self: center; color: #3498DB; text-decoration: none; font-weight: 500;">
             🌐 Learn more about ACEN, GenZero, and Keppel
@@ -258,12 +257,12 @@ const hover = ref(false)
       <v-col cols="12" sm="4" class="image-column">
         <img src="@/assets/images/creattura.png" alt="Nature-Based Solution" class="image-style rounded-lg shadow-lg"/>
       </v-col>
-      
+
       <!-- Text and Information Column -->
       <v-col cols="12" sm="8">
         <!-- Title -->
         <h6 class="text-h6 font-weight-bold text-title mb-2" style="color: #2C3E50;"> 🌿 Creattura</h6>
-        
+
         <!-- Description -->
         <p class="text-body-2 text-description text-justify mb-3" style="color: #34495E;">
           Creattura is a Japan-based climate tech company developing carbon credit projects in the Philippines by reducing methane emissions from rice farming. Using satellite monitoring and smart irrigation (AWD), it helps generate high-quality carbon credits through its digital platform, Lynx.
@@ -273,7 +272,7 @@ const hover = ref(false)
           <h3 class="text-end mx-2" style="color: #3A4A4A"> Price: </h3>
           <h3 class="text-end" style="color: #E67E22;"> PHP 1,665 carbon credit</h3>
         </div>
-        
+
         <div class="d-flex justify-end">
           <h4 class="text-end" style="color: #2C3E50;">sold 400000 carbon credit per year</h4>
         </div>
@@ -296,7 +295,7 @@ const hover = ref(false)
             Buy Now
           </v-btn>
         </div>
-        
+
       </v-col>
       <a href="https://carbonherald.com/creattura-on-a-new-mission-carbon-credits-from-rice-fields-in-philippines/" target="_blank" style="align-self: center; color: #3498DB; text-decoration: none; font-weight: 500;">
             🌐 Learn more about Creattura
