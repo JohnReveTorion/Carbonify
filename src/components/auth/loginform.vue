@@ -3,7 +3,7 @@
 </script>
 
 <template>
-          <v-form fast-fail @submit.prevent>
+  <v-form fast-fail @submit.prevent>
   <v-text-field
   label="Email"
    variant="outlined"

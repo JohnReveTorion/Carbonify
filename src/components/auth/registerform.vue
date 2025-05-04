@@ -68,9 +68,11 @@ const isPasswordConfirmVisible = ref(false)
       @click:append-inner="isPasswordConfirmVisible = !isPasswordConfirmVisible"
       :rules="[requiredValidator]"
     />
-
-    <v-btn rounded="xl" size="large" block color="green-darken-3" text-color="white" type="submit">
+    <RouterLink to="/" style="text-decoration: none;">
+      <v-btn rounded="xl" size="large" block color="green-darken-3" text-color="white" type="submit">
       Register
     </v-btn>
+  </RouterLink>
+    
   </v-form>
 </template>
