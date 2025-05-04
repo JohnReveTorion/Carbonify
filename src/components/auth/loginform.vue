@@ -1,9 +1,13 @@
+<script setup >
+  import { requiredValidator, emailValidator } from '@/utils/validators'
+</script>
+
 <template>
           <v-form fast-fail @submit.prevent>
   <v-text-field
-  label="Company Name" 
-   variant="outlined" 
-   class="mb-6" 
+  label="Email"
+   variant="outlined"
+   class="mb-6"
  density="comfortable"
  color="white"
  style="
@@ -13,6 +17,7 @@
     --v-field-text-color: white;
     --v-field-background-color: transparent;
   "
+  :rules="[requiredValidator, emailValidator]"
 />
 
 <v-text-field
@@ -30,6 +35,7 @@
     --v-field-text-color: white;
     --v-field-background-color: transparent;
   "
+  :rules="[requiredValidator]"
 />
   <RouterLink to="home" style="text-decoration: none;">
     <v-btn

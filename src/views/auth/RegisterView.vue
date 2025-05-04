@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import registerform from '@/components/auth/registerform.vue'
+import { requiredValidator, emailValidator } from '@/utils/validators'
 
 const theme = ref('default')
 const hover = ref(false)
@@ -22,7 +23,7 @@ const hover = ref(false)
               <p class="text-h5 white--text py-5 px-5 mr-5">
                 Every small step counts in the fight against climate change. By participating in carbon offset programs through Carbonify, you’re not just supporting your business—you’re contributing to a greener, more sustainable future for the Philippines. Let’s work together to protect our planet and create a better tomorrow, one carbon credit at a time.
               </p>
-            </v-col>  
+            </v-col>
 
             <!-- Form Section -->
             <v-col cols="12" sm="12" md="6" lg="4">
