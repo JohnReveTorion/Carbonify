@@ -37,7 +37,7 @@ const submitForm = () => {
   }
 };
 
-const userName = ref('John Doe') // Replace this with your actual user data
+const userName = ref('John Yoe') // Replace this with your actual user data
 
 // Compute initials from full name
 const userInitials = computed(() => {
@@ -78,13 +78,19 @@ const handleSignOut = () => {
     </v-avatar>
   </template>
 
-  <v-list>
+  <v-list class="cursor-pointer">
     <!-- Large Circular Initials -->
-    <v-list-item class="justify-center">
-      <v-avatar color="green" size="40">
-        <span class="text-white text-h5 font-bold">{{ userInitials }}</span>
-      </v-avatar>
-    </v-list-item>
+    <v-list-item class="cursor-pointer">
+  <div class="d-flex flex-column align-center w-100">
+    <v-avatar color="green" size="56" class="mb-2">
+      <span class="text-white text-h5 font-bold">{{ userInitials }}</span>
+    </v-avatar>
+    <!--<h6 class="mb-1">{{ fullName }}</h6>-->
+    <!-- <h6 class="text-caption">{{ email }}</h6>-->
+    <h4 class="mb-1">Johnny Yespapa</h4>
+    <h6 class="text-caption">Johnnyyespapa@gmail.com</h6>
+  </div>
+</v-list-item>
 
     <v-divider class="my-2"></v-divider>
 
@@ -92,12 +98,13 @@ const handleSignOut = () => {
     <router-link to="/">
   <v-list-item
     @click="handleSignOut(navigate)"
-    class="cursor-pointer">
+    class="cursor-pointer d-flex justify-center align-center">
     <v-list-item-title class="text-green font-weight-bold">Sign out</v-list-item-title>
   </v-list-item>
 </router-link>
 </v-list>
 </v-menu>
+
       </div>
     </nav>
 
