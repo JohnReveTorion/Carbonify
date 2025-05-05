@@ -1,11 +1,23 @@
 <script setup >
-  import { requiredValidator, emailValidator } from '@/utils/validators'
+  import { requiredValidator, emailValidator, passwordValidator, confirmedValidator } from '@/utils/validators'
+  import AlertNotification from '@/components/common/AlertNotification.vue'
+  import { useRegister } from '@/composable/auth/register'
+  import { ref } from 'vue'
 
+  const { formData, formAction, refVForm, onFormSubmit } = useRegister()
+  const isPasswordVisible = ref(false)
+  const isPasswordConfirmVisible = ref(false)
 </script>
 
 <template>
-  <v-form fast-fail @submit.prevent>
+  <AlertNotification
+    :form-success-message="formAction.formSuccessMessage"
+    :form-error-message="formAction.formErrorMessage"
+  ></AlertNotification>
+
+  <v-form ref="refVForm" fast-fail @submit.prevent="onFormSubmit">
     <v-text-field
+    v-model="formData.employeeName"
       label="Employee Name"
       variant="outlined"
       class="mb-4"
@@ -15,6 +27,7 @@
       :rules="[requiredValidator]"
     />
     <v-text-field
+    v-model="formData.companyName"
       label="Company Name"
       variant="outlined"
       class="mb-4"
@@ -24,6 +37,7 @@
       :rules="[requiredValidator]"
     />
     <v-text-field
+    v-model="formData.email"
       label="Email"
       variant="outlined"
       class="mb-4"
@@ -33,6 +47,7 @@
       :rules="[requiredValidator, emailValidator]"
     />
     <v-text-field
+      v-model="formData.phoneNumber"
       label="Phone Number"
       variant="outlined"
       class="mb-6"
@@ -42,6 +57,7 @@
       :rules="[requiredValidator]"
     />
     <v-text-field
+      v-model="formData.password"
       label="Password"
       variant="outlined"
       class="mb-6"
@@ -51,11 +67,12 @@
       :type="isPasswordVisible ? 'text' : 'password'"
       :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
       @click:append-inner="isPasswordVisible = !isPasswordVisible"
-      :rules="[requiredValidator]"
+      :rules="[requiredValidator, passwordValidator]"
     />
 
     <v-text-field
-      label="Confirm Password"
+    v-model="formData.password_confirmation"
+      label="Password Confirmation"
       variant="outlined"
       class="mb-6"
       prepend-icon="mdi-lock"
@@ -64,7 +81,7 @@
       :type="isPasswordConfirmVisible ? 'text' : 'password'"
       :append-inner-icon="isPasswordConfirmVisible ? 'mdi-eye-off' : 'mdi-eye'"
       @click:append-inner="isPasswordConfirmVisible = !isPasswordConfirmVisible"
-      :rules="[requiredValidator]"
+      :rules="[ requiredValidator, confirmedValidator(formData.password_confirmation, formData.password) ]"
     />
     <RouterLink to="/" style="text-decoration: none;">
       <v-btn rounded="xl" size="large" block color="green-darken-3" text-color="white" type="submit">
