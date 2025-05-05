@@ -1,11 +1,19 @@
 <script setup >
+  import AlertNotification from '@/components/common/AlertNotification.vue'
   import { requiredValidator, emailValidator } from '@/utils/validators'
-
+  import { useLogin } from '@/composable/auth/login.js'
+  const { formData, formAction, refVForm, onFormSubmit } = useLogin()
 </script>
 
 <template>
-  <v-form fast-fail @submit.prevent>
+  <AlertNotification
+    :form-success-message="formAction.formSuccessMessage"
+    :form-error-message="formAction.formErrorMessage"
+  ></AlertNotification>
+
+  <v-form ref="refVForm" fast-fail @submit.prevent="onFormSubmit">
   <v-text-field
+  v-model="formData.email"
   label="Email"
   variant="outlined"
   class="mb-6"
@@ -23,7 +31,7 @@
 />
 
 <v-text-field
-  v-model="password"
+  v-model="formData.password"
   label="Password"
   variant="outlined"
   density="comfortable"
@@ -38,8 +46,7 @@
     --v-input-control-color: white;
     --v-field-text-color: white;
     --v-field-background-color: transparent;
-    color: white;
-  "
+    color: white;"
   :rules="[requiredValidator]"
 />
 
