@@ -4,7 +4,6 @@ import loginform from '@/components/auth/loginform.vue'
 import carbonifyLogo from '@/assets/images/carbonify-logo.png' // Correct import
 const theme = ref('default')
 const password = ref('');
-const isPasswordVisible = ref(false);
 
 </script>
 

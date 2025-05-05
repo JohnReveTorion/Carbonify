@@ -1,8 +1,7 @@
-<script setup >
-  import { requiredValidator, emailValidator } from '@/utils/validators'
+<script setup>
+import { ref } from 'vue'
 
-
-
+const isPasswordVisible = ref(false)
 </script>
 
 <template>
@@ -26,13 +25,13 @@
 <v-text-field
   v-model="password"
   label="Password"
+  variant="outlined"
   density="comfortable"
   class="mb-6"
-  color="white"
   :type="isPasswordVisible ? 'text' : 'password'"
-  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
-  @click:append-inner-icon="isPasswordVisible = !isPasswordVisible"
-  variant="outlined"
+    :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
+    @click:append-inner="isPasswordVisible = !isPasswordVisible"
+  color="white"
   style="
     --v-field-label-color: white;
     --v-field-border-color: white;
@@ -42,6 +41,7 @@
     color: white;
   "
 />
+
 
 <RouterLink to="home" style="text-decoration: none;">
   <v-btn

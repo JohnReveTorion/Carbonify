@@ -1,3 +1,9 @@
+<script setup>
+import { ref } from 'vue'
+
+const showPassword = ref(false)
+const isPasswordConfirmVisible = ref(false)
+</script>
 
 
 <template>
@@ -45,9 +51,9 @@
       prepend-icon="mdi-lock"
       density="comfortable"
       color="green-darken-3"
-      :type="isPasswordVisible ? 'text' : 'password'"
-      :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
-      @click:append-inner="isPasswordVisible = !isPasswordVisible"
+      :type="showPassword ? 'text' : 'password'"
+    :append-inner-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
+    @click:append-inner="showPassword = !showPassword"
       :rules="[requiredValidator]"
     />
 
