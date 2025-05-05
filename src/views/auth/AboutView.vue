@@ -78,7 +78,7 @@ const router = useRouter();
 
 /* Dark overlay for better readability */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.712);
   padding: 60px 30px;
   width: 100%;
   min-height: 100vh;

@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import registerform from '@/components/auth/registerform.vue'
-import { requiredValidator, emailValidator } from '@/utils/validators'
+
 
 const theme = ref('default')
 const hover = ref(false)

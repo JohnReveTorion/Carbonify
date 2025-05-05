@@ -22,21 +22,26 @@
 />
 
 <v-text-field
+  v-model="password"
   label="Password"
   variant="outlined"
-  type="password"
   density="comfortable"
   class="mb-6"
+  :type="isPasswordVisible ? 'text' : 'password'"
+  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
+  @click:append-inner="isPasswordVisible = !isPasswordVisible"
   color="white"
   style="
-    color: white;
     --v-field-label-color: white;
     --v-field-border-color: white;
     --v-input-control-color: white;
     --v-field-text-color: white;
     --v-field-background-color: transparent;
-"
+    color: white;
+  "
 />
+
+
 <RouterLink to="home" style="text-decoration: none;">
   <v-btn
     type="submit"
