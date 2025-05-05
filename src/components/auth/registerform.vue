@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 <script setup >
   import { requiredValidator, emailValidator, passwordValidator, confirmedValidator } from '@/utils/validators'
   import AlertNotification from '@/components/common/AlertNotification.vue'
   import { useRegister } from '@/composable/auth/register'
   import { ref } from 'vue'
   import { supabase, formActionDefault } from '@/utils/supabase.js'
+=======
+<script setup>
+import { ref } from 'vue'
+
+const showPassword = ref(false)
+const isPasswordConfirmVisible = ref(false)
+</script>
+>>>>>>> ca888c88789fc79714d0f22cb4aebc5cb3b65a2f
 
   const { formData, formAction, refVForm } = useRegister()
   const isPasswordVisible = ref(false)
@@ -98,10 +107,17 @@
       prepend-icon="mdi-lock"
       density="comfortable"
       color="green-darken-3"
+<<<<<<< HEAD
       :type="isPasswordVisible ? 'text' : 'password'"
       :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
       @click:append-inner="isPasswordVisible = !isPasswordVisible"
       :rules="[requiredValidator, passwordValidator]"
+=======
+      :type="showPassword ? 'text' : 'password'"
+    :append-inner-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
+    @click:append-inner="showPassword = !showPassword"
+      :rules="[requiredValidator]"
+>>>>>>> ca888c88789fc79714d0f22cb4aebc5cb3b65a2f
     />
 
     <v-text-field

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script setup >
   import AlertNotification from '@/components/common/AlertNotification.vue'
   import { requiredValidator, emailValidator } from '@/utils/validators'
@@ -6,6 +7,12 @@
 
   const { formData, formAction, refVForm, onFormSubmit } = useLogin()
   const isPasswordVisible = ref(false)
+=======
+<script setup>
+import { ref } from 'vue'
+
+const isPasswordVisible = ref(false)
+>>>>>>> ca888c88789fc79714d0f22cb4aebc5cb3b65a2f
 </script>
 
 <template>
@@ -36,13 +43,13 @@
 <v-text-field
   v-model="formData.password"
   label="Password"
+  variant="outlined"
   density="comfortable"
   class="mb-6"
-  color="white"
   :type="isPasswordVisible ? 'text' : 'password'"
-  :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
-  @click:append-inner-icon="isPasswordVisible = !isPasswordVisible"
-  variant="outlined"
+    :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
+    @click:append-inner="isPasswordVisible = !isPasswordVisible"
+  color="white"
   style="
     --v-field-label-color: white;
     --v-field-border-color: white;
@@ -53,6 +60,11 @@
   :rules="[requiredValidator]"
 />
 
+<<<<<<< HEAD
+=======
+
+<RouterLink to="home" style="text-decoration: none;">
+>>>>>>> ca888c88789fc79714d0f22cb4aebc5cb3b65a2f
   <v-btn
     type="submit"
     color="#f0f0f0"
