@@ -1,9 +1,4 @@
-<script setup>
-import { ref } from 'vue'
 
-const isPasswordVisible = ref(false)
-const isPasswordConfirmVisible = ref(false)
-</script>
 
 <template>
   <v-form fast-fail @submit.prevent>
@@ -73,6 +68,6 @@ const isPasswordConfirmVisible = ref(false)
       Register
     </v-btn>
   </RouterLink>
-    
+
   </v-form>
 </template>

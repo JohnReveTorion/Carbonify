@@ -10,9 +10,9 @@ const router = useRouter();
     <!-- Overlay -->
     <div class="overlay">
       <!-- Back Button -->
-      <button @click="router.back()" class="back-button">
+      <V-button @click="router.back()" class="back-button">
         Go Back
-      </button>
+      </V-button>
 
       <!-- Content -->
       <div class="inner-content">
@@ -66,7 +66,7 @@ const router = useRouter();
 
 <style scoped>
 .content-container {
-  background-image: url('@/assets/images/about-bg.jpg'); /* <- Update this path as needed */
+  background-image: url('@/assets/images/transaction-bg.jpg'); /* <- Update this path as needed */
   background-size: cover;
   background-position: center;
   min-height: 100vh;
