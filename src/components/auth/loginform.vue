@@ -1,6 +1,8 @@
 <script setup >
   import { requiredValidator, emailValidator } from '@/utils/validators'
 
+
+
 </script>
 
 <template>
@@ -24,13 +26,13 @@
 <v-text-field
   v-model="password"
   label="Password"
-  variant="outlined"
   density="comfortable"
   class="mb-6"
+  color="white"
   :type="isPasswordVisible ? 'text' : 'password'"
   :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
-  @click:append-inner="isPasswordVisible = !isPasswordVisible"
-  color="white"
+  @click:append-inner-icon="isPasswordVisible = !isPasswordVisible"
+  variant="outlined"
   style="
     --v-field-label-color: white;
     --v-field-border-color: white;
@@ -40,7 +42,6 @@
     color: white;
   "
 />
-
 
 <RouterLink to="home" style="text-decoration: none;">
   <v-btn
