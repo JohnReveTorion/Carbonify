@@ -33,13 +33,13 @@
 <v-text-field
   v-model="formData.password"
   label="Password"
-  variant="outlined"
   density="comfortable"
   class="mb-6"
+  color="white"
   :type="isPasswordVisible ? 'text' : 'password'"
   :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
-  @click:append-inner="isPasswordVisible = !isPasswordVisible"
-  color="white"
+  @click:append-inner-icon="isPasswordVisible = !isPasswordVisible"
+  variant="outlined"
   style="
     --v-field-label-color: white;
     --v-field-border-color: white;
@@ -49,7 +49,6 @@
     color: white;"
   :rules="[requiredValidator]"
 />
-
 
 <RouterLink to="home" style="text-decoration: none;">
   <v-btn

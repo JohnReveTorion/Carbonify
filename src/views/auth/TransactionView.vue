@@ -1,9 +1,22 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 
+const userName = ref('Johnny Yespapa') // Replace this with your actual user data
+
+// Compute initials from full name
+const userInitials = computed(() => {
+  const names = userName.value.trim().split(' ')
+  return names.map(n => n[0]).join('').toUpperCase()
+})
+
+const handleSignOut = () => {
+  console.log('User signed out')
+  router.push('/login')
+}
 </script>
-
 <template>
 
 <nav class="navbar">
@@ -12,14 +25,53 @@ import { ref } from 'vue'
           <img src="@/assets/images/carbonify-logo.png" alt="Logo" class="logo-img" />
         </div>
         <ul class="navbar-links">
-          <li><router-link to="/">Market Trend</router-link></li>
+          <li><router-link to="/home">Market Trend</router-link></li>
           <li><router-link to="/transaction">Transaction History</router-link></li>
           <li><RouterLink to="about"> About</RouterLink></li>
 
         </ul>
+<v-menu bottom left>
+  <template #activator="{ props }">
+    <v-avatar
+      v-bind="props"
+      class="ml-4 cursor-pointer"
+      color="green"
+      size="40"
+    >
+      <span class="text-white text-sm font-semibold">{{ userInitials }}</span>
+    </v-avatar>
+  </template>
+
+  <v-list class="cursor-pointer">
+    <!-- Large Circular Initials -->
+    <v-list-item class="cursor-pointer">
+  <div class="d-flex flex-column align-center w-100">
+    <v-avatar color="green" size="56" class="mb-2">
+      <span class="text-white text-h5 font-bold">{{ userInitials }}</span>
+    </v-avatar>
+    <!--<h6 class="mb-1">{{ fullName }}</h6>-->
+    <!-- <h6 class="text-caption">{{ email }}</h6>-->
+    <h4 class="mb-1">Johnny Yespapa</h4>
+    <h6 class="text-caption">Johnnyyespapa@gmail.com</h6>
+  </div>
+</v-list-item>
+
+    <v-divider class="my-2"></v-divider>
+
+    <!-- Sign Out -->
+    <router-link to="/">
+  <v-list-item
+    @click="handleSignOut(navigate)"
+    class="cursor-pointer d-flex justify-center align-center">
+    <v-list-item-title class="text-green font-weight-bold">Sign out</v-list-item-title>
+  </v-list-item>
+</router-link>
+</v-list>
+</v-menu>
+
       </div>
     </nav>
-    
+
     <div class="content-container">
     <!-- Overlay -->
     <div class="overlay">
@@ -27,16 +79,16 @@ import { ref } from 'vue'
       <div class="inner-content">
         <h1 class="title">Transaction History</h1>
 
-        
-        
 
-        
 
-        
+
+
+
+
       </div>
     </div>
   </div>
-    
+
 </template>
 
 <style scoped>
