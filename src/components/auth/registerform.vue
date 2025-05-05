@@ -3,10 +3,44 @@
   import AlertNotification from '@/components/common/AlertNotification.vue'
   import { useRegister } from '@/composable/auth/register'
   import { ref } from 'vue'
+  import { supabase, formActionDefault } from '@/utils/supabase.js'
 
-  const { formData, formAction, refVForm, onFormSubmit } = useRegister()
+  const { formData, formAction, refVForm } = useRegister()
   const isPasswordVisible = ref(false)
   const isPasswordConfirmVisible = ref(false)
+
+  const onSubmit = async () => {
+  formAction.value = { ...formActionDefault }
+  formAction.value.formProcess = true
+
+  const { data, error } = await supabase.auth.signUp({
+    email: formData.value.email,
+    password: formData.value.password,
+    options: {
+      data: {
+        employeeName: formData.value.employeeName,
+        companyName: formData.value.companyName
+      },
+    },
+  })
+
+  if (error) {
+    console.log(error)
+    formAction.value.formErrorMessage = error.message
+    formAction.value.formStatus = error.status
+  } else if (data) {
+    console.log(data)
+    formAction.value.formSuccessMessage = 'Successfully Registered Account.'
+  }
+  formAction.value.formProcess = false
+}
+
+  const onFormSubmit = () => {
+    refVForm.value?.validator().then(({ valid }) => {
+      if (valid) onSubmit()
+    })
+  }
+
 </script>
 
 <template>
@@ -82,12 +116,13 @@
       :append-inner-icon="isPasswordConfirmVisible ? 'mdi-eye-off' : 'mdi-eye'"
       @click:append-inner="isPasswordConfirmVisible = !isPasswordConfirmVisible"
       :rules="[ requiredValidator, confirmedValidator(formData.password_confirmation, formData.password) ]"
+      :loading="formAction.formProcess"
+      :disabled="formAction.formProcess"
     />
-    <RouterLink to="/" style="text-decoration: none;">
+
       <v-btn rounded="xl" size="large" block color="green-darken-3" text-color="white" type="submit">
       Register
     </v-btn>
-  </RouterLink>
 
   </v-form>
 </template>

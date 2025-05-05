@@ -2,7 +2,10 @@
   import AlertNotification from '@/components/common/AlertNotification.vue'
   import { requiredValidator, emailValidator } from '@/utils/validators'
   import { useLogin } from '@/composable/auth/login.js'
+  import { ref } from 'vue'
+
   const { formData, formAction, refVForm, onFormSubmit } = useLogin()
+  const isPasswordVisible = ref(false)
 </script>
 
 <template>
@@ -50,7 +53,6 @@
   :rules="[requiredValidator]"
 />
 
-<RouterLink to="home" style="text-decoration: none;">
   <v-btn
     type="submit"
     color="#f0f0f0"
@@ -63,7 +65,6 @@
   >
     Log In
   </v-btn>
-</RouterLink>
 
 </v-form>
 </template>
