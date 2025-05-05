@@ -6,7 +6,7 @@
 <template>
   <v-form fast-fail @submit.prevent>
   <v-text-field
-  label="Company Name"
+  label="Email"
   variant="outlined"
   class="mb-6"
   density="comfortable"
@@ -19,6 +19,7 @@
     --v-field-text-color: white;
     --v-field-background-color: transparent;
   "
+  :rules="[requiredValidator, emailValidator]"
 />
 
 <v-text-field
@@ -39,6 +40,7 @@
     --v-field-background-color: transparent;
     color: white;
   "
+  :rules="[requiredValidator]"
 />
 
 

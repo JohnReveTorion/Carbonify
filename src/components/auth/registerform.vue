@@ -1,4 +1,7 @@
+<script setup >
+  import { requiredValidator, emailValidator } from '@/utils/validators'
 
+</script>
 
 <template>
   <v-form fast-fail @submit.prevent>
