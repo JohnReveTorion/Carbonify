@@ -13,7 +13,7 @@ import { ref } from 'vue'
           <img src="@/assets/images/carbonify-logo.png" alt="Logo" class="logo-img" />
         </div>
         <ul class="navbar-links">
-          <li><router-link to="/"><b style="text-decoration: underline;">Market Trend</b></router-link></li>
+          <li><router-link to="/">Market Trend</router-link></li>
           <li><router-link to="/transaction">Transaction History</router-link></li>
           <li><RouterLink to="about"> About</RouterLink></li>
 

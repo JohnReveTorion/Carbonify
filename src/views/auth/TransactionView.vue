@@ -6,61 +6,41 @@ import { ref } from 'vue'
 
 <template>
 
-  <nav class="navbar">
+<nav class="navbar">
       <div class="navbar-center">
         <div class="navbar-logo">
           <img src="@/assets/images/carbonify-logo.png" alt="Logo" class="logo-img" />
         </div>
         <ul class="navbar-links">
-          <li><router-link to="/home">Market Trend</router-link></li>
-          <li><router-link to="/transaction"><b style="text-decoration: underline;">Transaction History</b></router-link></li>
-          <li><router-link to="about">About</router-link></li>
+          <li><router-link to="/">Market Trend</router-link></li>
+          <li><router-link to="/transaction">Transaction History</router-link></li>
+          <li><RouterLink to="about"> About</RouterLink></li>
+
         </ul>
       </div>
     </nav>
-  <div class="content-container">
+    
+    <div class="content-container">
+    <!-- Overlay -->
+    <div class="overlay">
+      <!-- Content -->
+      <div class="inner-content">
+        <h1 class="title">Transaction History</h1>
 
+        
+        
 
-    <!-- Card Section with fixed width -->
-    <div class="card-container">
-      <v-card class="elevation-5 rounded-lg">
-        <v-card-text class="card-title p-4">
-          <v-row>
-            <v-col cols="12" md="4">
-              <h2>2344873574</h2>
-            </v-col>
-            <v-col cols="12" md="4">
-              <h2>2344873574</h2>
-            </v-col>
-            <v-col cols="12" md="4">
-              <h2>2344873574</h2>
-            </v-col>
-          </v-row>
-        </v-card-text>
-      </v-card>
+        
+
+        
+      </div>
     </div>
-<div class="card-container">
-      <v-card class="elevation-5 rounded-lg">
-        <v-card-text class="card-title p-4">
-          <v-row>
-            <v-col cols="12" md="4">
-              <h2>2344873574</h2>
-            </v-col>
-            <v-col cols="12" md="4">
-              <h2>2344873574</h2>
-            </v-col>
-            <v-col cols="12" md="4">
-              <h2>2344873574</h2>
-            </v-col>
-          </v-row>
-        </v-card-text>
-      </v-card>
-    </div>
-
   </div>
+    
 </template>
 
 <style scoped>
+
 /* Navbar Styles */
 .navbar {
   background-color: #ffffff;
@@ -103,21 +83,36 @@ import { ref } from 'vue'
   color: #000000;
 }
 
-/* Background image container */
 .content-container {
-  background-image: url('@/assets/images/transaction1-bg.jpg');
+  background-image: url('@/assets/images/transaction1-bg.jpg'); /* <- Update this path as needed */
   background-size: cover;
   background-position: center;
-  min-height: 150vh;
-  padding-top: 100px; /* To give space below the navbar */
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Card container with fixed width */
-.card-container {
-  max-width: 800px;  /* Adjust the width as needed */
-  width: 100%; /* Makes it responsive but doesn't stretch full width */
-  margin: 20px auto;  /* Centers the card */
-  background: rgba(255, 255, 255, 0.8); /* Optional: Add opacity to make background visible */
-  padding: 20px;
+/* Dark overlay for better readability */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 60px 30px;
+  width: 100%;
+  min-height: 100vh;
+  color: #e0e0e0;
 }
+
+
+
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+
+
 </style>
