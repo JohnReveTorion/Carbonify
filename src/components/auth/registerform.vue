@@ -1,24 +1,16 @@
-<<<<<<< HEAD
-<script setup >
-  import { requiredValidator, emailValidator, passwordValidator, confirmedValidator } from '@/utils/validators'
-  import AlertNotification from '@/components/common/AlertNotification.vue'
-  import { useRegister } from '@/composable/auth/register'
-  import { ref } from 'vue'
-  import { supabase, formActionDefault } from '@/utils/supabase.js'
-=======
 <script setup>
+import { requiredValidator, emailValidator, passwordValidator, confirmedValidator } from '@/utils/validators'
+import AlertNotification from '@/components/common/AlertNotification.vue'
+import { useRegister } from '@/composable/auth/register'
 import { ref } from 'vue'
+import { supabase, formActionDefault } from '@/utils/supabase.js'
 
-const showPassword = ref(false)
+const { formData, formAction, refVForm } = useRegister()
+
+const isPasswordVisible = ref(false)
 const isPasswordConfirmVisible = ref(false)
-</script>
->>>>>>> ca888c88789fc79714d0f22cb4aebc5cb3b65a2f
 
-  const { formData, formAction, refVForm } = useRegister()
-  const isPasswordVisible = ref(false)
-  const isPasswordConfirmVisible = ref(false)
-
-  const onSubmit = async () => {
+const onSubmit = async () => {
   formAction.value = { ...formActionDefault }
   formAction.value.formProcess = true
 
@@ -44,23 +36,22 @@ const isPasswordConfirmVisible = ref(false)
   formAction.value.formProcess = false
 }
 
-  const onFormSubmit = () => {
-    refVForm.value?.validator().then(({ valid }) => {
-      if (valid) onSubmit()
-    })
-  }
-
+const onFormSubmit = () => {
+  refVForm.value?.validate().then(({ valid }) => {
+    if (valid) onSubmit()
+  })
+}
 </script>
 
 <template>
   <AlertNotification
     :form-success-message="formAction.formSuccessMessage"
     :form-error-message="formAction.formErrorMessage"
-  ></AlertNotification>
+  />
 
   <v-form ref="refVForm" fast-fail @submit.prevent="onFormSubmit">
     <v-text-field
-    v-model="formData.employeeName"
+      v-model="formData.employeeName"
       label="Employee Name"
       variant="outlined"
       class="mb-4"
@@ -70,7 +61,7 @@ const isPasswordConfirmVisible = ref(false)
       :rules="[requiredValidator]"
     />
     <v-text-field
-    v-model="formData.companyName"
+      v-model="formData.companyName"
       label="Company Name"
       variant="outlined"
       class="mb-4"
@@ -80,7 +71,7 @@ const isPasswordConfirmVisible = ref(false)
       :rules="[requiredValidator]"
     />
     <v-text-field
-    v-model="formData.email"
+      v-model="formData.email"
       label="Email"
       variant="outlined"
       class="mb-4"
@@ -107,21 +98,13 @@ const isPasswordConfirmVisible = ref(false)
       prepend-icon="mdi-lock"
       density="comfortable"
       color="green-darken-3"
-<<<<<<< HEAD
       :type="isPasswordVisible ? 'text' : 'password'"
       :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
       @click:append-inner="isPasswordVisible = !isPasswordVisible"
       :rules="[requiredValidator, passwordValidator]"
-=======
-      :type="showPassword ? 'text' : 'password'"
-    :append-inner-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
-    @click:append-inner="showPassword = !showPassword"
-      :rules="[requiredValidator]"
->>>>>>> ca888c88789fc79714d0f22cb4aebc5cb3b65a2f
     />
-
     <v-text-field
-    v-model="formData.password_confirmation"
+      v-model="formData.password_confirmation"
       label="Password Confirmation"
       variant="outlined"
       class="mb-6"
@@ -131,14 +114,20 @@ const isPasswordConfirmVisible = ref(false)
       :type="isPasswordConfirmVisible ? 'text' : 'password'"
       :append-inner-icon="isPasswordConfirmVisible ? 'mdi-eye-off' : 'mdi-eye'"
       @click:append-inner="isPasswordConfirmVisible = !isPasswordConfirmVisible"
-      :rules="[ requiredValidator, confirmedValidator(formData.password_confirmation, formData.password) ]"
+      :rules="[requiredValidator, confirmedValidator(formData.password_confirmation, formData.password)]"
       :loading="formAction.formProcess"
       :disabled="formAction.formProcess"
     />
 
-      <v-btn rounded="xl" size="large" block color="green-darken-3" text-color="white" type="submit">
+    <v-btn
+      rounded="xl"
+      size="large"
+      block
+      color="green-darken-3"
+      text-color="white"
+      type="submit"
+    >
       Register
     </v-btn>
-
   </v-form>
 </template>
