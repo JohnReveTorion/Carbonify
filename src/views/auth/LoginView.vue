@@ -2,9 +2,30 @@
 import { ref } from 'vue'
 import loginform from '@/components/auth/loginform.vue'
 import carbonifyLogo from '@/assets/images/carbonify-logo.png' // Correct import
-const theme = ref('default')
-const password = ref('');
-const isPasswordVisible = ref(false);
+import { supabase } from '@/supabase'
+// const theme = ref('default')
+// const password = ref('');
+// const isPasswordVisible = ref(false);
+
+const loading = ref(false)
+const email = ref('')
+
+const handleLogin = async () => {
+  try {
+    loading.value = true
+    const { error } = await supabase.auth.signInWithOtp({
+      email: email.value,
+    })
+    if (error) throw error
+    alert('Check your email for the login link!')
+  } catch (error) {
+    if (error instanceof Error) {
+      alert(error.message)
+    }
+  } finally {
+    loading.value = false
+  }
+}
 
 </script>
 
@@ -40,7 +61,32 @@ const isPasswordVisible = ref(false);
     </v-card-title>
 
     <v-card-text class="pt-0 px-6">
-      <loginform></loginform>
+      <v-form @submit.prevent="handleLogin" class="d-flex flex-column gap-4">
+        <v-text-field
+          v-model="email"
+          label="Email"
+          placeholder="Your email"
+          type="email"
+          density="comfortable"
+          variant="outlined"
+          hide-details="auto"
+          :rules="[v => !!v || 'Email is required']"
+          required
+        />
+    
+        <v-btn
+          type="submit"
+          color="primary"
+          :loading="loading"
+          :disabled="loading"
+          size="large"
+          class="text-white"
+          style="background-color: #2e7d32;"
+          block
+        >
+          {{ loading ? 'Loading...' : 'Send Link' }}
+        </v-btn>
+      </v-form>
 
       <v-divider class="my-6"></v-divider>
 

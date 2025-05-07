@@ -1,73 +1,81 @@
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { supabase } from '@/supabase'
 
+const email = ref('')
+const password = ref('')
+const confirmPassword = ref('')
+const isPasswordVisible = ref(false)
+const isPasswordConfirmVisible = ref(false)
+const router = useRouter()
+
+const handleRegister = async () => {
+  if (password.value !== confirmPassword.value) {
+    alert('Passwords do not match!')
+    return
+  }
+
+  const { data, error } = await supabase.auth.signUp({
+    email: email.value,
+    password: password.value,
+    options: {
+      // You can pass user metadata here
+      data: {
+        company_name: 'Your Company Name',
+        // ... other fields if you want
+      },
+    },
+  })
+
+  if (error) {
+    alert(error.message)
+  } else {
+    alert('Check your email to confirm your account')
+    router.push('/') // back to login or home
+  }
+}
+</script>
 
 <template>
-  <v-form fast-fail @submit.prevent>
+  <v-form fast-fail @submit.prevent="handleRegister">
+    <!-- Other fields omitted for brevity -->
     <v-text-field
-      label="Employee Name"
-      variant="outlined"
-      class="mb-4"
-      prepend-icon="mdi-account"
-      density="comfortable"
-      color="green-darken-3"
-      :rules="[requiredValidator]"
-    />
-    <v-text-field
-      label="Company Name"
-      variant="outlined"
-      class="mb-4"
-      prepend-icon="mdi-office-building"
-      density="comfortable"
-      color="green-darken-3"
-      :rules="[requiredValidator]"
-    />
-    <v-text-field
+      v-model="email"
       label="Email"
       variant="outlined"
       class="mb-4"
-      prepend-icon="mdi-email"
-      density="comfortable"
       color="green-darken-3"
-      :rules="[requiredValidator, emailValidator]"
     />
     <v-text-field
-      label="Phone Number"
-      variant="outlined"
-      class="mb-6"
-      prepend-icon="mdi-phone"
-      density="comfortable"
-      color="green-darken-3"
-      :rules="[requiredValidator]"
-    />
-    <v-text-field
+      v-model="password"
       label="Password"
       variant="outlined"
       class="mb-6"
-      prepend-icon="mdi-lock"
-      density="comfortable"
-      color="green-darken-3"
       :type="isPasswordVisible ? 'text' : 'password'"
       :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
       @click:append-inner="isPasswordVisible = !isPasswordVisible"
-      :rules="[requiredValidator]"
+      color="green-darken-3"
     />
-
     <v-text-field
+      v-model="confirmPassword"
       label="Confirm Password"
       variant="outlined"
       class="mb-6"
-      prepend-icon="mdi-lock"
-      density="comfortable"
-      color="green-darken-3"
       :type="isPasswordConfirmVisible ? 'text' : 'password'"
       :append-inner-icon="isPasswordConfirmVisible ? 'mdi-eye-off' : 'mdi-eye'"
       @click:append-inner="isPasswordConfirmVisible = !isPasswordConfirmVisible"
-      :rules="[requiredValidator]"
+      color="green-darken-3"
     />
-    <RouterLink to="/" style="text-decoration: none;">
-      <v-btn rounded="xl" size="large" block color="green-darken-3" text-color="white" type="submit">
+    <v-btn
+      type="submit"
+      rounded="xl"
+      size="large"
+      block
+      color="green-darken-3"
+      text-color="white"
+    >
       Register
     </v-btn>
-  </RouterLink>
-
   </v-form>
 </template>

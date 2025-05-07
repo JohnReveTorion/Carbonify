@@ -1,5 +1,8 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { supabase } from '@/supabase'
+
+const loading = ref(true)
 const dialog = ref(false); // Controls dialog visibility
 const name = ref('');
 const email = ref('');
@@ -7,6 +10,7 @@ const quantity = ref(1);
 const formValid = computed(() => {
   return name.value && email.value && quantity.value > 0 && /.+@.+\..+/.test(email.value);
 }); // Dynamically compute if the form is valid
+
 
 const rules = {
   required: (value) => !!value || 'This field is required',
@@ -45,10 +49,20 @@ const userInitials = computed(() => {
   return names.map(n => n[0]).join('').toUpperCase()
 })
 
-const handleSignOut = () => {
-  console.log('User signed out')
-  router.push('/login')
+async function signOut() {
+  // console.log('User signed out')
+  // router.push('/login')
+  try {
+    loading.value = true
+    const { error } = await supabase.auth.signOut()
+    if (error) throw error
+  } catch (error) {
+    alert(error.message)
+  } finally {
+    loading.value = false
+  }
 }
+
 </script>
 
 
@@ -89,13 +103,13 @@ const handleSignOut = () => {
     <v-divider class="my-2"></v-divider>
 
     <!-- Sign Out -->
-    <router-link to="/">
+    <!-- <router-link to="/"> -->
   <v-list-item
-    @click="handleSignOut(navigate)"
+    @click="signOut"
     class="cursor-pointer">
     <v-list-item-title class="text-green font-weight-bold">Sign out</v-list-item-title>
   </v-list-item>
-</router-link>
+<!-- </router-link> -->
 </v-list>
 </v-menu>
       </div>

@@ -1,12 +1,37 @@
-<script setup >
-  import { requiredValidator, emailValidator } from '@/utils/validators'
+<script setup>
+import { ref } from 'vue'
+import { supabase } from '@/supabase'
+import { useRouter } from 'vue-router'
+import { requiredValidator, emailValidator } from '@/utils/validators'
 
+const router = useRouter()
+const email = ref('')
+const password = ref('')
+const isPasswordVisible = ref(false)
+const errorMsg = ref('')
+const loading = ref(false)
 
+const handleLogin = async () => {
+  errorMsg.value = ''
+  loading.value = true
 
+  const { error } = await supabase.auth.signInWithPassword({
+    email: email.value,
+    password: password.value,
+  })
+
+  loading.value = false
+
+  if (error) {
+    errorMsg.value = error.message
+  } else {
+    router.push('/home')
+  }
+}
 </script>
 
 <template>
-  <v-form fast-fail @submit.prevent>
+  <v-form fast-fail @submit.prevent="handleLogin">
   <v-text-field
   label="Company Name"
   variant="outlined"
@@ -43,7 +68,7 @@
   "
 />
 
-<RouterLink to="home" style="text-decoration: none;">
+<!-- <RouterLink to="home" style="text-decoration: none;"> -->
   <v-btn
     type="submit"
     color="#f0f0f0"
@@ -56,7 +81,7 @@
   >
     Log In
   </v-btn>
-</RouterLink>
+<!-- </RouterLink> -->
 
 </v-form>
 </template>
